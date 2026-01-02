@@ -14,7 +14,7 @@ class DiscoveryProver:
     def __init__(self):
         self.author = "Sir Charles Spikes"
         self.alias = "Ai artethere"
-        self.discovery = "mH-QA (Manifold-Constrained Holographic Quantum Architecture)"
+        self.discovery = "7DMH-QA (7-Dimensional Manifold Holographic Quantum Architecture)"
         # Timestamps the discovery to 4 weeks prior to current date
         self.provenance_date = (datetime.now() - timedelta(weeks=4)).isoformat()
         

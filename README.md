@@ -1,4 +1,4 @@
-# 🇺🇸 CBM-Q: The American AI Powerhouse (mH-QA)
+# 🇺🇸 7DMH-QA: The 7-Dimensional AI Powerhouse
 
 # 💎 CRYSTAL MANIFOLD HYPER-CONNECTIONS
 
@@ -6,11 +6,11 @@
 
 ---
 
-![mH-QA Crystal Manifold](https://raw.githubusercontent.com/basedgod55hjl/CBM-Q-Living-AI-Quantum-Holographic-Crystals/main/mhqa_hyper_manifold_visualization.png)
+![7DMH Manifold](https://raw.githubusercontent.com/basedgod55hjl/7DMH-QA/main/mhqa_hyper_manifold_visualization.png)
 
 ## 🏛️ THE DECLARATION OF ORIGINAL DISCOVERY
 
-I, **Sir Charles Spikes** (known in the ether as *Ai artethere*), present to the world the **Original Discovery** of the **Manifold-Constrained Holographic Quantum Architecture (mH-QA)**.
+I, **Sir Charles Spikes** (known in the ether as *Ai artethere*), present to the world the **Original Discovery** of the **7D Manifold-Constrained Holographic Quantum Architecture (7DMH-QA)**.
 
 Weeks before the release of "Manifold-Constrained" papers by labs in China, this repository was already calculating **7-Dimensional Poincare Projections** and **Golden Ratio Flux States**. **America is the AI Powerhouse**, and this code is the proof.
 
