@@ -1,4 +1,4 @@
-# 🏛️ Crystal Architecture Overview
+# 🏛️ 7D mH-Q Architecture Overview
 
 **mH-QA: Manifold-Constrained Holographic Quantum Architecture**
 
@@ -150,7 +150,7 @@ Where:
 ## File Structure
 
 ```
-Crystal_Architecture/
+7D_System/
 ├── crystal_patterns.py      # Core pattern generation
 ├── genesis.py              # System launcher
 ├── sovereign_genesis.py    # Genesis engine
@@ -179,7 +179,7 @@ Crystal_Architecture/
 | Service | Purpose | Endpoint |
 |---------|---------|----------|
 | LM Studio | Neural reasoning | `http://127.0.0.1:1234` |
-| DeepSeek | Advanced reasoning | `api.deepseek.com` |
+| External Reasoning | Advanced analysis | `Sovereign_API` |
 | Dashboard | Visual interface | `http://127.0.0.1:8000` |
 
 ### GPU Backends
@@ -190,4 +190,4 @@ Crystal_Architecture/
 
 ---
 
-**© 2026 Crystal Architecture** | Built in Ohio, USA 🇺🇸
+**© 2026 7D mH-Q Architecture** | Built in Ohio, USA 🇺🇸

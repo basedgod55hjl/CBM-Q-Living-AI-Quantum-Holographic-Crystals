@@ -87,9 +87,10 @@ bio_seed = miner.mine()  # Φ-harmonic signal
 **Solution:** Crystal Architecture enables AI that owns its own weights and can self-evolve.
 
 ```python
-from autonomous_reasoner import DeepSeekAutonomousReasoner
+from autonomous_reasoner import SovereignAutonomousReasoner
 
-reasoner = DeepSeekAutonomousReasoner()
+# Initialize the Sovereign Evolution Engine
+reasoner = SovereignAutonomousReasoner()
 reasoner.reason_and_build("Optimize Crystal Patterns for Self-Sovereignty")
 # AI modifies its own code while maintaining manifold stability
 ```

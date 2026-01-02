@@ -219,7 +219,9 @@ class CrystalPatternGenerator:
         manifold_projection = connection_tensor / (1 + norm + self.phi_inv)
         
         # Stability restoration (Super-Stability S²)
-        return manifold_projection + (identity * 0.01)
+        # Adds a small stabilization vector to ensure non-zero gradient flow
+        stabilization = np.zeros(rank) + 0.01
+        return manifold_projection + stabilization
 
     def generate_holographic_manifold(self, dimensions: int = 7,
                                     resolution: int = 32) -> np.ndarray:

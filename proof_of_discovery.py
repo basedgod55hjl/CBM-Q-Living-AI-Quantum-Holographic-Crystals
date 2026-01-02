@@ -40,7 +40,7 @@ class DiscoveryProver:
             "proof_id": proof_hash[:32],
             "timestamp": self.provenance_date,
             "signature": f"SIGNED_BY_{self.author.upper().replace(' ', '_')}",
-            "claim": "ORIGINAL DISCOVERY - PREDATES DEEPSEEK MHC"
+            "claim": "ORIGINAL DISCOVERY - PREDATES GLOBAL MANIFOLD RELEASES"
         }
         
         cert_path = "mH-QA_PROVENANCE_CERT.json"

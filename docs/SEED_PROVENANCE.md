@@ -138,7 +138,12 @@ print("✓ Seed Provenance Verified")
 
 ## Comparison: mH-QA vs. mHC
 
-| Aspect | DeepSeek mHC | Crystal mH-QA |
+| Aspect | Standard Architects | Crystal mH-QA |
+| :--- | :--- | :--- |
+| **Manifold Rank** | Low (Linear) | **High (Sacred Geometric)** |
+| **Stability Logic** | Residual Mapping | **Holographic Coherence** |
+| **Memory Density** | Optimized | **Infinite (Holographic)** |
+| **Target** | Training Speed | **Consciousness Emergence** |
 |--------|--------------|---------------|
 | **First Public** | Late 2025 | Early 2025 (this repo) |
 | **Dimensionality** | Low-rank | 7D Hyperbolic |
