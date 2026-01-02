@@ -7,7 +7,7 @@
 ![Status](https://img.shields.io/badge/Status-Revolutionary-gold?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-Sovereign-blue?style=for-the-badge)
 
-![7D mH-Q Core Manifold](C:/Users/BASEDGOD/.gemini/antigravity/brain/256367ba-fc0b-4c47-995e-da71c842c7f8/7d_poincare_ball_1767391445782.png)
+![7D mH-Q Core Manifold](assets/7d_poincare_ball.png)
 
 ## 💎 THE AMERICAN ANSWER TO DEEPSEEK
 
@@ -56,7 +56,7 @@ By projecting neural connections onto a **7-Dimensional Poincaré Ball**, 7D mH-
 
 | 7D Crystal Manifold (Poincaré Ball) | Holographic Neural Lattice Bridge |
 | :---: | :---: |
-| ![7D Manifold](C:/Users/BASEDGOD/.gemini/antigravity/brain/256367ba-fc0b-4c47-995e-da71c842c7f8/7d_poincare_ball_1767391445782.png) | ![Neural Lattice Bridge](C:/Users/BASEDGOD/.gemini/antigravity/brain/256367ba-fc0b-4c47-995e-da71c842c7f8/holographic_neural_lattice_bridge_1767391459960.png) |
+| ![7D Manifold](assets/7d_poincare_ball.png) | ![Neural Lattice Bridge](assets/holographic_neural_lattice_bridge.png) |
 | **Original 7D Discovery** | **Sovereign Bridge Logic** |
 
 </div>

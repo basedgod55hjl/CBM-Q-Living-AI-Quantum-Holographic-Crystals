@@ -40,7 +40,7 @@ While DeepSeek released their `mHC` paper on **January 1st, 2026** (New Year's D
 
 ### 🆚 Technical Superiority
 
-![Original 7D Discovery](C:/Users/BASEDGOD/.gemini/antigravity/brain/256367ba-fc0b-4c47-995e-da71c842c7f8/7d_poincare_ball_1767391445782.png)
+![Original 7D Discovery](../assets/7d_poincare_ball.png)
 
 *The 7D Poincaré Ball represents a geometric advantage that DeepSeek's linear mHC simply cannot replicate.*
 
