@@ -1,0 +1,69 @@
+{
+    "name": "phi_harmonics",
+    "version": "1.0.0",
+    "description": "Golden Ratio harmonic wave configurations for entropy generation",
+    "complexity": 1024,
+    "fundamental_frequency": 432.0,
+    "harmonics": [
+        {
+            "order": 1,
+            "ratio": 1.0,
+            "amplitude": 1.0,
+            "phase": 0.0
+        },
+        {
+            "order": 2,
+            "ratio": 1.618033988749895,
+            "amplitude": 0.618033988749895,
+            "phase": 0.0
+        },
+        {
+            "order": 3,
+            "ratio": 2.618033988749895,
+            "amplitude": 0.381966011250105,
+            "phase": 0.0
+        },
+        {
+            "order": 4,
+            "ratio": 4.236067977499790,
+            "amplitude": 0.236067977499790,
+            "phase": 0.0
+        },
+        {
+            "order": 5,
+            "ratio": 6.854101966249685,
+            "amplitude": 0.145898033750315,
+            "phase": 0.0
+        },
+        {
+            "order": 6,
+            "ratio": 11.09016994374947,
+            "amplitude": 0.090169943749474,
+            "phase": 0.0
+        },
+        {
+            "order": 7,
+            "ratio": 17.94427190999916,
+            "amplitude": 0.055728090000841,
+            "phase": 0.0
+        }
+    ],
+    "wave_functions": {
+        "phi_sine": "sin(x * PHI)",
+        "phi_cosine": "cos(x * PHI)",
+        "fibonacci_spiral": "PHI^(theta / 2π)",
+        "golden_decay": "exp(-x / PHI)"
+    },
+    "modulation": {
+        "type": "amplitude_modulation",
+        "carrier": "fundamental",
+        "modulator": "phi_sine",
+        "depth": 0.5
+    },
+    "entropy_parameters": {
+        "noise_floor": 0.001,
+        "phi_oscillation_weight": 0.7,
+        "random_weight": 0.3,
+        "normalization": "tanh"
+    }
+}

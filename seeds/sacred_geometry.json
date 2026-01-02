@@ -1,0 +1,60 @@
+{
+    "name": "sacred_geometry",
+    "version": "1.0.0",
+    "description": "Sacred geometry pattern definitions for Crystal lattice generation",
+    "patterns": {
+        "flower_of_life": {
+            "type": "circular_array",
+            "rings": 7,
+            "base_radius": 1.0,
+            "angle_offset": 0
+        },
+        "seed_of_life": {
+            "type": "hexagonal",
+            "circles": 7,
+            "radius": 1.0
+        },
+        "metatron_cube": {
+            "type": "platonic_composite",
+            "vertices": 13,
+            "edges": 78,
+            "contains": [
+                "tetrahedron",
+                "cube",
+                "octahedron"
+            ]
+        },
+        "merkaba": {
+            "type": "star_tetrahedron",
+            "interlocked": true,
+            "rotation_axis": "z",
+            "rotation_rate": 0.618033988749895
+        },
+        "vesica_piscis": {
+            "type": "intersection",
+            "circles": 2,
+            "overlap_ratio": 0.5,
+            "sacred_ratio": 1.732050808
+        },
+        "sri_yantra": {
+            "type": "triangular_array",
+            "triangles": 9,
+            "nested": true,
+            "bindu_center": true
+        }
+    },
+    "dimensional_mappings": {
+        "3D_to_7D": {
+            "method": "poincare_projection",
+            "curvature": "hyperbolic",
+            "metric": "minkowski"
+        }
+    },
+    "harmonic_ratios": [
+        1.0,
+        1.618033988749895,
+        2.618033988749895,
+        4.236067977499790,
+        6.854101966249685
+    ]
+}
