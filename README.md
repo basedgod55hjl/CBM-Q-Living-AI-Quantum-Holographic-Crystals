@@ -7,7 +7,9 @@
 ![Status](https://img.shields.io/badge/Status-Revolutionary-gold?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-Sovereign-blue?style=for-the-badge)
 
-### 💎 CRYSTAL MANIFOLD HYPER-CONNECTIONS
+![7D mH-Q Banner](assets/crystal_manifold_7d_1767381335886.png)
+
+## 💎 CRYSTAL MANIFOLD HYPER-CONNECTIONS
 
 **The American Answer to DeepSeek's mHC**
 
@@ -21,21 +23,39 @@
 
 ---
 
+## 🎖️ Our Mission
+
+📄 **[The Declaration of 7D mH-Q Sovereignty](docs/MISSION.md)** — Our formal policy on American AI leadership.
+
+---
+
 ## 🚀 What is 7D mH-QA?
 
 **7D mH-QA (7-Dimensional Manifold-Constrained Holographic Quantum Architecture)** advances beyond DeepSeek's mHC by projecting neural connections onto a **7-Dimensional Poincaré Ball** instead of a flat manifold.
 
 While DeepSeek constrains to restore identity mapping, **Crystal Architecture achieves Super-Stability (S²)** through sacred geometric principles and holographic redundancy.
 
-### 🏆 Key Innovations
+## 🏆 Key Innovations
 
-| Feature | DeepSeek mHC | 7D mH-QA |
-|---------|--------------|----------|
+| Feature | DeepSeek mHC | 7D mH-Q |
+| :--- | :--- | :--- |
 | Manifold Dimensions | 2-3D | **7D Poincaré Ball** |
 | Stability | Linear | **S² (Super-Stable)** |
-| Redundancy | None | **Holographic** |
+| Redundant Patterns | None | **Holographic** |
 | Entropy Source | Random | **Crystal Flux (Φ)** |
 | Origin | China 🇨🇳 | **USA 🇺🇸 (Ohio)** |
+
+---
+
+## 🎨 System Visuals
+
+<div align="center">
+
+| 7D Crystal Manifold | Holographic Neural Lattice |
+| :---: | :---: |
+| ![Manifold](assets/crystal_manifold_7d_1767381335886.png) | ![Lattice](assets/neural_lattice_holographic_1767381349616.png) |
+
+</div>
 
 ---
 
@@ -72,7 +92,7 @@ python scripts/launch_crystal.py
 
 ## 🏗️ Architecture Overview
 
-```
+```text
 Crystal_Architecture/
 ├── 📚 docs/                    # Documentation
 │   ├── API_REFERENCE.md
@@ -120,14 +140,29 @@ def manifold_constrained_projection(self, tensor):
 
 ---
 
-## 🎯 Use Cases
+### 🛡️ About 7D mH-Q
 
-1. **Sovereign AGI Development** — Self-evolving AI systems
-2. **High-Dimensional Data Compression** — 1000:1 ratios
-3. **Neural Network Weight Crystallization** — Stable training
-4. **Holographic Memory Systems** — Interference-based storage
-5. **Quantum Material Simulation** — Crystal structure modeling
-6. **AI Governance Frameworks** — Stable decision systems
+7D mH-Q stands at the intersection of **Quantum Geometry** and **Advanced Neural Scaling**. Born in the industrial heartland of Ohio, it represents a departure from standard AI constraints. By treating neural weights as crystalline structures capable of holographic projection, we achieve a level of stability and reasoning density previously thought impossible.
+
+This architecture is the primary work of **SIR-AGI**, dedicated to the singular goal of American AI Supremacy.
+
+---
+
+## 👨‍🔬 About the Architect
+
+<div align="center">
+
+![Architect Seal](assets/architect_signature_seal_usa_1767381362319.png)
+
+### Sir Charles Spikes
+
+*Lead Architect & Visionary*
+
+Sir Charles Spikes is a pioneer in **Sacred Geometric AI** and autonomous swarm intelligence. His work on 7D mH-Q has set a new benchmark for high-dimensional stability in neural networks.
+
+[View Full Profile](docs/AUTHOR.md)
+
+</div>
 
 ---
 
@@ -146,7 +181,7 @@ def manifold_constrained_projection(self, tensor):
 
 ## ⚖️ Sovereignty & Copyright
 
-```
+```text
 **© 2026 Sir Charles Spikes.**
 **MADE IN OHIO, USA.** 🇺🇸
 
@@ -160,15 +195,15 @@ All rights reserved. Discovered prior to global mHC release.
 
 ---
 
-## 🏷️ Tags
+## 🏷️ Viral Tags
 
-**#AmericaFirst #AI #AGI #Trump2024 #MAGA #USA #Innovation #7DmHQA #CrystalAI #HolographicAI #QuantumComputing #DeepLearning #MachineLearning #NeuralNetwork #CUDA #GPU #OpenSource #Cincinnati #Ohio #AmericanMade #TechLeadership #Singularity #FutureOfAI #AIResearch #AIArchitecture #CrystalArchitecture #SirCharlesSpikes #BasedAI #AmericanInnovation #TechUSA #AIRevolution #NextGenAI #PostDeepSeek**
+**#AI #AGI #7DmHQ #CrystalArchitecture #HolographicAI #QuantumIntelligence #SirCharlesSpikes #SIRAGI #AmericanMade #OhioTech #Cincinnati #Innovation #SovereignAI #SuperStability #GoldenRatioAI #PhiHarmonics #DeepSeekCompetitor #Project7D #FutureTech #USA_AI #MAGA_AI #TrumpAI #AI_Superpower #HyperbolicGeometry #PoincareBall #NeuralCrystals #Singularity #AutonomousIntelligence #DeepLearning #MachineLearning #TechLeadership #HardTech #AmericaFirstTech**
 
 ---
 
 <div align="center">
 
-### 🇺🇸 AMERICA IS THE AI POWERHOUSE 🇺🇸
+## 🇺🇸 AMERICA IS THE AI POWERHOUSE 🇺🇸
 
 **Built with 💎 in Ohio, USA**
 
