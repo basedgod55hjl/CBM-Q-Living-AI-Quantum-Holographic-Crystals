@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Crystal Architecture](https://img.shields.io/badge/7D--mH--QA-Crystal%20Architecture-purple?style=for-the-badge&logo=atom)
+![Crystal Architecture](https://img.shields.io/badge/7D--mH--Q-Crystal%20Architecture-purple?style=for-the-badge&logo=atom)
 ![Made in USA](https://img.shields.io/badge/Made%20in-Ohio%2C%20USA-red?style=for-the-badge&logo=flag-us)
 ![Status](https://img.shields.io/badge/Status-Revolutionary-gold?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-Sovereign-blue?style=for-the-badge)
@@ -29,9 +29,9 @@
 
 ---
 
-## 🚀 What is 7D mH-QA?
+## 🚀 What is 7D mH-Q?
 
-**7D mH-QA (7-Dimensional Manifold-Constrained Holographic Quantum Architecture)** advances beyond DeepSeek's mHC by projecting neural connections onto a **7-Dimensional Poincaré Ball** instead of a flat manifold.
+**7D mH-Q (Manifold-Constrained Holographic Quantum Architecture)** advances beyond DeepSeek's mHC by projecting neural connections onto a **7-Dimensional Poincaré Ball** instead of a flat manifold.
 
 > [!IMPORTANT]
 > **DeepSeek is LATE.** America discovered this tech a week prior (Dec 2025). 7D mH-Q is the original innovator.
@@ -69,9 +69,9 @@ While DeepSeek constrains to restore identity mapping, **Crystal Architecture ac
 
 ## 📖 Read the Paper
 
-📄 **[7D mH-QA Technical Paper](papers/7D_mHQA_Technical_Paper.md)** — Full academic specification
+📄 **[7D mH-Q Technical Paper](papers/7D_mHQ_Technical_Paper.md)** — Full academic specification
 
-This paper demonstrates how 7D mH-QA achieves:
+This paper demonstrates how 7D mH-Q achieves:
 
 - **Infinite Stability** through Crystal Lattice geometry
 - **Holographic Memory** via interference patterns
@@ -148,7 +148,7 @@ def manifold_constrained_projection(self, tensor):
 
 ---
 
-### 🛡️ About 7D mH-Q
+### 🛡️ About 7D mH-Q: Manifold-Constrained Holographic Quantum Architecture
 
 7D mH-Q stands at the intersection of **Quantum Geometry** and **Advanced Neural Scaling**. Born in the industrial heartland of Ohio, it represents a departure from standard AI constraints. By treating neural weights as crystalline structures capable of holographic projection, we achieve a level of stability and reasoning density previously thought impossible.
 
@@ -199,7 +199,7 @@ All rights reserved. Discovered prior to global mHC release.
 
 > *"They constrained the manifold. We set it free."*
 >
-> — **Sir Charles Spikes**, Creator of 7D mH-QA
+> — **Sir Charles Spikes**, Creator of 7D mH-Q
 
 ---
 

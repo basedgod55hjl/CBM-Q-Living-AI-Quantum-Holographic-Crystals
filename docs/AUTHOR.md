@@ -1,6 +1,6 @@
 # 💎 Sir Charles Spikes
 
-## Creator of 7D mH-Q Architecture
+## Creator of 7D mH-Q: Manifold-Constrained Holographic Quantum Architecture
 
 ---
 
