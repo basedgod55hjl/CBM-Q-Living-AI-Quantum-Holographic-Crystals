@@ -1,4 +1,4 @@
-# 📘 mH-QA Crystal Architecture API Reference
+# 📘 7D mH-Q Crystal Architecture API Reference
 
 **Version 2.0.0** | Complete API Documentation
 
@@ -47,7 +47,7 @@ Generates Metatron's Cube sacred geometry pattern.
 
 ##### `manifold_constrained_projection(connection_tensor: np.ndarray) -> np.ndarray`
 
-**Core mH-QA Algorithm**: Projects connections onto 7D Crystal Manifold with Super-Stability (S²).
+**Core 7D mH-Q Algorithm**: Projects connections onto 7D Crystal Manifold with Super-Stability (S²).
 
 **Parameters:**
 
@@ -121,14 +121,14 @@ Generate holographic interference patterns via phase conjugation.
 
 ---
 
-### `mH_QA_GenesisEngine`
+### `7D_mHQ_GenesisEngine`
 
 The American Powerhouse Parameter Unfolding Engine.
 
 ```python
-from sovereign_genesis import mH_QA_GenesisEngine
+from sovereign_genesis import 7D_mHQ_GenesisEngine
 
-engine = mH_QA_GenesisEngine(matrix_size=175_000_000)
+engine = 7D_mHQ_GenesisEngine(matrix_size=175_000_000)
 engine.run_genesis("model.gguf")
 ```
 
@@ -146,7 +146,7 @@ Executes full crystallization cycle:
 
 1. Bio-Seed Generation (Φ-Node)
 2. Manifold Unfolding (Λ-Node)
-3. GGUF Packaging
+3. GGUF Packaging (7D mH-Q)
 
 ---
 

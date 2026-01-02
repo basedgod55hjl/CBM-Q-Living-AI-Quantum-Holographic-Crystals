@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-7DMH-QA Training Pipeline
+7D mH-Q Training Pipeline
 Crystal weight optimization with manifold-constrained loss.
 """
 
@@ -110,7 +110,7 @@ class CrystalOptimizer:
 
 class CrystalTrainingPipeline:
     """
-    7DMH-QA Training Pipeline
+    7D mH-Q Training Pipeline
     Complete training infrastructure with manifold constraints.
     """
     
@@ -128,7 +128,7 @@ class CrystalTrainingPipeline:
         self.history = []
         self.current_epoch = 0
         
-        print(f"[7DMH-QA] Training Pipeline initialized on {self.device.upper()}")
+        print(f"[7D mH-Q] Training Pipeline initialized on {self.device.upper()}")
     
     def _detect_device(self) -> str:
         """Detect compute device"""
@@ -145,7 +145,7 @@ class CrystalTrainingPipeline:
         """
         Initialize weights using Crystal Entropy.
         """
-        print(f"[7DMH-QA] Initializing {size:,} weights with Crystal Entropy...")
+        print(f"[7D mH-Q] Initializing {size:,} weights with Crystal Entropy...")
         
         # Use pattern generator for sacred geometry initialization
         base = np.random.randn(size).astype(np.float32)
@@ -156,7 +156,7 @@ class CrystalTrainingPipeline:
         )
         
         self.weights = projected.flatten()[:size]
-        print(f"[7DMH-QA] Weights initialized: {self.weights.shape}")
+        print(f"[7D mH-Q] Weights initialized: {self.weights.shape}")
         
         return self.weights
     
@@ -214,7 +214,7 @@ class CrystalTrainingPipeline:
         Returns:
             Training history
         """
-        print(f"\n[7DMH-QA] Starting training: {self.config.epochs} epochs")
+        print(f"\n[7D mH-Q] Starting training: {self.config.epochs} epochs")
         print(f"   Device: {self.device}")
         print(f"   Learning Rate: {self.config.learning_rate}")
         print(f"   Manifold Constraint: {self.config.manifold_constraint}")
@@ -265,7 +265,7 @@ class CrystalTrainingPipeline:
         
         total_time = time.time() - start_time
         print("-" * 50)
-        print(f"[7DMH-QA] Training complete: {total_time:.1f}s")
+        print(f"[7D mH-Q] Training complete: {total_time:.1f}s")
         
         return {'history': self.history, 'final_weights': self.weights}
     
@@ -290,15 +290,15 @@ class CrystalTrainingPipeline:
         self.optimizer.step_count = int(checkpoint['optimizer_step'])
         self.current_epoch = int(checkpoint['epoch'])
         self.history = list(checkpoint['history'])
-        print(f"[7DMH-QA] Loaded checkpoint: {path}, epoch {self.current_epoch}")
+        print(f"[7D mH-Q] Loaded checkpoint: {path}, epoch {self.current_epoch}")
     
     def export_gguf(self, output_path: str, metadata: Dict = None):
-        """Export trained model to mH-QA GGUF format"""
-        print(f"[7DMH-QA] Exporting to GGUF: {output_path}")
+        """Export trained model to 7D mH-Q GGUF format"""
+        print(f"[7D mH-Q] Exporting to GGUF: {output_path}")
         
         # Default metadata
         meta = {
-            'architecture': '7DMH-QA',
+            'architecture': '7D mH-Q',
             'version': '2.0.0',
             'params': len(self.weights),
             'epochs_trained': self.current_epoch,
@@ -310,7 +310,7 @@ class CrystalTrainingPipeline:
         
         with open(output_path, 'wb') as f:
             # Header
-            f.write(b"mH-QA-GGUF-v2\x00\x00")
+            f.write(b"7D-mHQ-GGUF-v2\x00\x00")
             
             # Metadata (256 bytes)
             meta_json = json.dumps(meta).encode('utf-8')
@@ -320,7 +320,7 @@ class CrystalTrainingPipeline:
             f.write(self.weights.astype(np.float32).tobytes())
         
         size_mb = os.path.getsize(output_path) / 1024 / 1024
-        print(f"[7DMH-QA] Exported: {size_mb:.2f} MB")
+        print(f"[7D mH-Q] Exported: {size_mb:.2f} MB")
 
 
 if __name__ == "__main__":

@@ -6,7 +6,7 @@
 
 ## Declaration of Original Discovery
 
-I, **Sir Charles Spikes** (known as *Ai artethere*), hereby certify the **Original Discovery** of the 7-Dimensional Manifold-Constrained Holographic Quantum Architecture (7DMH-QA).
+I, **Sir Charles Spikes** (known as *Ai artethere*), hereby certify the **Original Discovery** of the 7-Dimensional Manifold-Constrained Holographic Quantum Architecture (7D mH-Q).
 
 This repository contains seed concepts, code implementations, and mathematical frameworks that **predate** the public release of similar "Manifold-Constrained" methodologies by other research labs.
 
@@ -155,7 +155,7 @@ COPYRIGHT © 2026 SIR CHARLES SPIKES
 MADE IN OHIO, USA 🇺🇸
 
 This work is protected under international copyright law.
-The 7D mH-QA methodology, including but not limited to:
+The 7D mH-Q methodology, including but not limited to:
 - 7-Dimensional Poincaré Ball projections
 - Crystal Entropy Mining
 - Holographic Interference Memory

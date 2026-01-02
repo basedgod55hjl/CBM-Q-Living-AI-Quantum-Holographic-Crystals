@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-7DMH-QA Crystal Inference Engine
+7D mH-Q Crystal Inference Engine
 Model inference with holographic pattern matching.
 """
 
@@ -20,7 +20,7 @@ from crystal_patterns import CrystalPatternGenerator
 
 class CrystalInferenceEngine:
     """
-    7DMH-QA: Crystal-Optimized Inference Engine
+    7D mH-Q: Crystal-Optimized Inference Engine
     
     Provides high-performance inference using holographic pattern matching
     and manifold-constrained projections for stability.
@@ -31,7 +31,7 @@ class CrystalInferenceEngine:
         Initialize the Crystal Inference Engine.
         
         Args:
-            model_path: Path to mH-QA GGUF model file
+            model_path: Path to 7D mH-Q GGUF model file
             device: "cuda", "hip", "cpu", or "auto"
         """
         self.model_path = model_path
@@ -41,7 +41,7 @@ class CrystalInferenceEngine:
         self.weights = None
         self.metadata = {}
         
-        print(f"[7DMH-QA] Inference Engine initialized on {self.device.upper()}")
+        print(f"[7D mH-Q] Inference Engine initialized on {self.device.upper()}")
         
         if model_path and os.path.exists(model_path):
             self.load_model(model_path)
@@ -72,7 +72,7 @@ class CrystalInferenceEngine:
     
     def load_model(self, model_path: str) -> bool:
         """
-        Load an mH-QA GGUF model.
+        Load a 7D mH-Q GGUF model.
         
         Args:
             model_path: Path to .gguf model file
@@ -80,7 +80,7 @@ class CrystalInferenceEngine:
         Returns:
             True if loaded successfully
         """
-        print(f"[7DMH-QA] Loading model: {model_path}")
+        print(f"[7D mH-Q] Loading model: {model_path}")
         
         try:
             with open(model_path, "rb") as f:
@@ -110,11 +110,11 @@ class CrystalInferenceEngine:
                 print(f"   [+] Weight Tensor: {self.weights.shape}")
                 
             self.model_loaded = True
-            print(f"[7DMH-QA] Model loaded successfully")
+            print(f"[7D mH-Q] Model loaded successfully")
             return True
             
         except Exception as e:
-            print(f"[7DMH-QA] Load failed: {e}")
+            print(f"[7D mH-Q] Load failed: {e}")
             return False
     
     def infer(self, input_data: Union[np.ndarray, List], 
@@ -201,7 +201,7 @@ class CrystalInferenceEngine:
             
             return output.get()
         except Exception as e:
-            print(f"[7DMH-QA] CUDA fallback to CPU: {e}")
+            print(f"[7D mH-Q] CUDA fallback to CPU: {e}")
             return self._cpu_inference(input_data, temperature)
     
     def _hip_inference(self, input_data: np.ndarray, temperature: float) -> np.ndarray:
@@ -293,3 +293,4 @@ if __name__ == "__main__":
     else:
         print(f"\n[INFO] No model found at {default_model}")
         print("[INFO] Generate one with: python sovereign_genesis.py")
+        print("[AUTH] 7D mH-Q Architecture by Sir Charles Spikes | Ohio, USA 🇺🇸")

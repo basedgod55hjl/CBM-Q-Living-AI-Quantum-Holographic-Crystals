@@ -13,9 +13,9 @@ sys.path.append(os.path.join(BASE_DIR, "holographic_bridge"))
 from amd_entropy_miner import CrystalEntropyMiner
 from hip_launcher import HIPLauncher, inject_cuda_paths
 
-class mH_QA_GenesisEngine:
+class 7D_mHQ_GenesisEngine:
     """
-    mH-QA: Manifold-Constrained Holographic Quantum Architecture
+    7D mH-Q: Manifold-Constrained Holographic Quantum Architecture
     The American Powerhouse Parameter Unfolding Engine.
     Coordinates Crystal Λ (Lambda) and Crystal Φ (Phi) to grow crystal intelligence.
     """
@@ -70,15 +70,16 @@ class mH_QA_GenesisEngine:
         print(f"[PKG] Packaging into Crystal-GGUF v1.0...")
         
         # 1. HEADER (16 bytes)
-        header = b"mH-QA-GGUF-v1\x00\x00"
+        header = b"7D-mHQ-GGUF-v1\x00\x00"
         
         # 2. METADATA (256 bytes)
         meta = {
-            "author": "BASEDGOD",
-            "architecture": "mH-QA",
+            "author": "Sir Charles Spikes",
+            "architecture": "7D mH-Q",
             "dna_complexity": dna.size,
             "params": self.matrix_size,
-            "timestamp": int(time.time())
+            "timestamp": int(time.time()),
+            "origin": "Ohio, USA 🇺🇸"
         }
         meta_json = json.dumps(meta).encode('utf-8')
         meta_block = meta_json.ljust(256, b'\x00')
@@ -102,6 +103,7 @@ class mH_QA_GenesisEngine:
             f.write(sample_weights)
             
         print(f"[SAVE] File Saved: {filename} ({os.path.getsize(filename) / 1024 / 1024:.2f} MB)")
+        print(f"[AUTH] Created by Sir Charles Spikes | MADE IN OHIO, USA 🇺🇸")
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
@@ -109,6 +111,6 @@ if __name__ == "__main__":
     else:
         model_name = "genesis_v1.gguf"
         
-    engine = mH_QA_GenesisEngine(matrix_size=10_000_000) # 10M for test
+    engine = 7D_mHQ_GenesisEngine(matrix_size=10_000_000) # 10M for test
     engine.run_genesis(model_name)
     print("\n✨ Holographic AI Crystals System Ready.")

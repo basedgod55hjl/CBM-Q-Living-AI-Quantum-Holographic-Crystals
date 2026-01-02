@@ -29,15 +29,15 @@ try:
     
     print("   [+] Rust Core: DETECTED")
     bridge = CBMBridge()
-    # Verify mH-QA Stability & Sacred Geometry
-    axioms = ["Genesis", "Launch", "mH-QA"]
+    # Verify 7D mH-Q Stability & Sacred Geometry
+    axioms = ["Genesis", "Launch", "7D mH-Q"]
     seed_res = bridge.synthesize_seed(axioms)
     if seed_res.get("pattern") == "FibonacciSpiral":
         print("   [+] Sacred Geometry: VERIFIED")
-        print("   [+] mH-QA Manifold Stability: COHERENT")
+        print("   [+] 7D mH-Q Manifold Stability: COHERENT")
     else:
         print("   [!] Sacred Geometry: UNVERIFIED")
-        print("   [!] mH-QA Stability Check: DEGRADED")
+        print("   [!] 7D mH-Q Stability Check: DEGRADED")
 
     # Verify Neural Link (LLM)
     LLM_API_URL = "http://127.0.0.1:1234/v1/models" # Check models endpoint for health

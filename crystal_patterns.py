@@ -13,7 +13,7 @@ PHI_INV = 1.0 / PHI     # Golden ratio conjugate
 
 class CrystalPatternGenerator:
     """
-    mH-QA: Manifold-Constrained Holographic Quantum Architecture
+    7D mH-Q: Manifold-Constrained Holographic Quantum Architecture
     Generates advanced crystal patterns for holographic intelligence with 
     Super-Stability (S²) Manifold Projections.
     """
@@ -205,7 +205,7 @@ class CrystalPatternGenerator:
 
     def manifold_constrained_projection(self, connection_tensor: np.ndarray) -> np.ndarray:
         """
-        Manifold-Constrained Projection (mH-QA Algorithm)
+        Manifold-Constrained Projection (7D mH-Q Algorithm)
         Restores Identity Mapping in high-dimensional hyper-connections.
         Projects connections onto the Sacred 7D Crystal Manifold.
         """
@@ -224,7 +224,7 @@ class CrystalPatternGenerator:
     def generate_holographic_manifold(self, dimensions: int = 7,
                                     resolution: int = 32) -> np.ndarray:
         """
-        Generate mH-QA Holographic Manifold in N dimensions
+        Generate 7D mH-Q Holographic Manifold in N dimensions
         Uses 7D Poincare Ball projections for superior stability over mHC.
         """
         if dimensions <= 0:
@@ -242,7 +242,7 @@ class CrystalPatternGenerator:
         # Combine into single array
         manifold = np.stack(meshes, axis=-1)
 
-        # Apply mH-QA Manifold-Constraint Transformation
+        # Apply 7D mH-Q Manifold-Constraint Transformation
         for dim in range(dimensions):
             phase = dim * self.phi
             # Dynamic curvature projection

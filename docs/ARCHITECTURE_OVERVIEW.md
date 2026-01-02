@@ -26,7 +26,7 @@ graph TB
     end
     
     subgraph "Genesis Engine"
-        GE[mH_QA_GenesisEngine]
+        GE[7D_mHQ_GenesisEngine]
         GGUF[GGUF Packager]
     end
     
@@ -94,7 +94,7 @@ Model crystallization and packaging.
 
 1. **Bio-Seed** → Entropy mining via Φ-Node
 2. **Unfold** → GPU parameter crystallization
-3. **Package** → mH-QA GGUF format output
+3. **Package** → 7D mH-Q GGUF format output
 
 ---
 
@@ -121,7 +121,7 @@ sequenceDiagram
 
 ## The 7D Crystal Manifold
 
-Unlike standard neural networks that operate in Euclidean space, mH-QA projects all computations onto a **7-Dimensional Poincaré Ball**.
+Unlike standard neural networks that operate in Euclidean space, 7D mH-Q projects all computations onto a **7-Dimensional Poincaré Ball**.
 
 ### Why 7 Dimensions?
 
