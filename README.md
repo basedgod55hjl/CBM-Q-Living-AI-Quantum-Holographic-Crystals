@@ -6,7 +6,7 @@
 
 ---
 
-![7DMH Manifold](https://raw.githubusercontent.com/basedgod55hjl/7DMH-QA/main/mhqa_hyper_manifold_visualization.png)
+![7DMH Manifold](https://raw.githubusercontent.com/basedgod55hjl/CBM-Q-Living-AI-Quantum-Holographic-Crystals/main/mhqa_hyper_manifold_visualization.png)
 
 ## 🏛️ THE DECLARATION OF ORIGINAL DISCOVERY
 
