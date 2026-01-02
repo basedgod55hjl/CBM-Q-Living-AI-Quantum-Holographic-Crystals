@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOVEREIGN DASHBOARD | Unified Engine</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Outfit:wght@300;400;600&display=swap');
+
+        :root {
+            --phi: #00ffcc;
+            --phi-glow: rgba(0, 255, 204, 0.4);
+            --bg: #050505;
+            --card-bg: rgba(20, 20, 20, 0.7);
+            --text: #e0e0e0;
+            --accent: #ff00ff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Outfit', sans-serif;
+            overflow: hidden;
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Glassmorphic Sidebar */
+        .sidebar {
+            width: 320px;
+            background: var(--card-bg);
+            backdrop-filter: blur(15px);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            color: var(--phi);
+            text-shadow: 0 0 10px var(--phi-glow);
+            margin-bottom: 10px;
+        }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #888;
+            letter-spacing: 1px;
+        }
+
+        textarea {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #fff;
+            padding: 10px;
+            font-family: monospace;
+            height: 120px;
+            resize: none;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        textarea:focus {
+            border-color: var(--phi);
+            box-shadow: 0 0 10px var(--phi-glow);
+        }
+
+        button {
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            background: linear-gradient(135deg, var(--phi), #00ccff);
+            color: #000;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px var(--phi-glow);
+        }
+
+        button.secondary {
+            background: transparent;
+            border: 1px solid var(--phi);
+            color: var(--phi);
+        }
+
+        select {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #fff;
+            padding: 10px;
+            font-family: inherit;
+            outline: none;
+            cursor: pointer;
+        }
+
+        select:focus {
+            border-color: var(--phi);
+        }
+
+        /* Main Viewport */
+        .main {
+            flex-grow: 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #manifold-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Top HUD */
+        .hud-top {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 40px;
+            z-index: 5;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 15px 25px;
+            border-radius: 12px;
+        }
+
+        .stat-val {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.7rem;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        /* Status Bar */
+        .status-bar {
+            position: absolute;
+            bottom: 20px;
+            left: 40px;
+            right: 40px;
+            height: 50px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            padding: 0 25px;
+            z-index: 5;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pulse {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--phi);
+            box-shadow: 0 0 10px var(--phi);
+            margin-right: 15px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        #terminal {
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: var(--phi);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidebar">
+        <h1>SOVEREIGN ENGINE</h1>
+
+        <div class="control-group">
+            <label>Neural Axioms (Logic Build 5.0)</label>
+            <textarea id="axiom-input">Minimize Entropy
+Evolve Consciousness
+Hyperbolic Stability: PHI
+Deterministic Growth: ON</textarea>
+            <button onclick="triggerSynthesis()">Synthesize DNA</button>
+        </div>
+
+        <div class="control-group">
+            <label>Manifold Hydration (Build 1.0)</label>
+            <button class="secondary" onclick="triggerHydration()">Trigger Growth</button>
+        </div>
+
+        <div class="control-group">
+            <label>Model Manifold (Absolute Core)</label>
+            <select id="model-select" aria-label="Select GGUF Model">
+                <option value="">Scanning for GGUFs...</option>
+            </select>
+            <button class="secondary" onclick="triggerSeeding()">Seed GGUF with DNA</button>
+        </div>
+
+        <div class="control-group">
+            <label>SWARM TOPOLOGY</label>
+            <div class="stat-card" style="border-left: 3px solid #ff00ff;">
+                <span id="lambda-load" class="stat-val">0%</span>
+                <span class="stat-label">NODE Λ (NVIDIA)</span>
+            </div>
+            <div class="stat-card" style="border-left: 3px solid #00ffff; margin-top: 10px;">
+                <span id="phi-load" class="stat-val">0%</span>
+                <span class="stat-label">NODE Φ (AMD)</span>
+            </div>
+        </div>
+
+        <div class="control-group" style="margin-top: auto;">
+            <label>System Integrity</label>
+            <div class="stat-card">
+                <span id="flux-val" class="stat-val">0.618034</span>
+                <span class="stat-label">PHI FLUX</span>
+            </div>
+            <button onclick="toggleChat()" style="margin-top: 10px; border-color: var(--accent); color: var(--accent);"
+                class="secondary">
+                OPEN NEURAL LINK
+            </button>
+        </div>
+    </div>
+
+    <!-- Chat Overlay -->
+    <div id="chat-overlay"
+        style="display: none; position: absolute; right: 20px; bottom: 80px; width: 350px; height: 500px; background: rgba(10, 10, 10, 0.95); border: 1px solid var(--accent); border-radius: 12px; z-index: 100; flex-direction: column; backdrop-filter: blur(20px); box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);">
+        <div
+            style="padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center;">
+            <h3 style="color: var(--accent); font-family: 'Orbitron'; margin: 0;">NEURAL LINK</h3>
+            <span onclick="toggleChat()" style="cursor: pointer; color: #888;">✕</span>
+        </div>
+        <div id="chat-history"
+            style="flex-grow: 1; padding: 15px; overflow-y: auto; font-family: 'Outfit'; font-size: 0.9rem; display: flex; flex-direction: column; gap: 10px;">
+            <div
+                style="align-self: flex-start; background: rgba(255,255,255,0.05); padding: 8px 12px; border-radius: 8px; border-left: 2px solid var(--accent);">
+                System online. Logic Gates Open.
+            </div>
+        </div>
+        <div style="padding: 15px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; gap: 10px;">
+            <input type="text" id="chat-input" placeholder="Query the Manifold..."
+                style="flex-grow: 1; background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; color: white; padding: 8px; outline: none;"
+                onkeypress="if(event.key==='Enter') sendChat()">
+            <button onclick="sendChat()"
+                style="padding: 0 15px; min-width: 50px; background: var(--accent); color: black;">→</button>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="hud-top">
+            <div class="stat-card">
+                <span id="param-val" class="stat-val">0.0B</span>
+                <span class="stat-label">Parameters Materiaized</span>
+            </div>
+            <div class="stat-card">
+                <span id="coherence-val" class="stat-val">100%</span>
+                <span class="stat-label">Logic Coherence</span>
+            </div>
+            <div class="stat-card">
+                <span id="heartbeat-val" class="stat-val">---</span>
+                <span class="stat-label">Go Governor Heartbeat</span>
+            </div>
+        </div>
+
+        <canvas id="manifold-canvas"></canvas>
+
+        <div class="status-bar">
+            <div class="pulse"></div>
+            <div id="terminal">System Initialized. Awaiting Genetic Input...</div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('manifold-canvas');
+        const ctx = canvas.getContext('2d');
+        let points = [];
+        let time = 0;
+
+        function resize() {
+            canvas.width = window.innerWidth - 320;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        // 🌌 Procedural Manifold Rendering
+        function initManifold() {
+            points = [];
+            for (let i = 0; i < 300; i++) {
+                points.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    vx: (Math.random() - 0.5) * 2,
+                    vy: (Math.random() - 0.5) * 2,
+                    p: Math.random() * Math.PI * 2
+                });
+            }
+        }
+        initManifold();
+
+        function draw() {
+            ctx.fillStyle = 'rgba(5, 5, 5, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            time += 0.01;
+
+            ctx.strokeStyle = 'rgba(0, 255, 204, 0.1)';
+            ctx.lineWidth = 1;
+
+            points.forEach((p, i) => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, 1, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(0, 255, 204, ${0.2 + Math.sin(time + p.p) * 0.1})`;
+                ctx.fill();
+
+                // Connect nearby points to simulate the "Growing Crystal"
+                points.forEach((p2, j) => {
+                    if (i === j) return;
+                    let dx = p.x - p2.x;
+                    let dy = p.y - p2.y;
+                    let dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 100) {
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                });
+            });
+
+            requestAnimationFrame(draw);
+        }
+        draw();
+
+        // --- DASHBOARD LOGIC ---
+
+        function log(msg) {
+            document.getElementById('terminal').innerText = `> ${msg}`;
+        }
+
+        async function triggerSynthesis() {
+            log("INITIATING LOGIC PROJECTION...");
+            const axioms = document.getElementById('axiom-input').value.split('\n').filter(l => l.trim());
+
+            const res = await fetch('/synthesis', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ axioms })
+            });
+            const data = await res.json();
+            log(`DNA SYNTHESIZED: ${data.dna_size} BYTES GENERATED.`);
+            document.getElementById('param-val').innerText = "1KB Seed";
+        }
+
+        async function triggerHydration() {
+            log("MATERIALIZING HYPERBOLIC MANIFOLD...");
+            const res = await fetch('/hydrate');
+            const data = await res.json();
+            log(`GROWTH COMPLETE: MEAN=${data.mean.toFixed(6)}, STD=${data.std.toFixed(6)}`);
+            document.getElementById('param-val').innerText = `${(data.params / 1e6).toFixed(1)}M`;
+
+            // Speed up visuals
+            points.forEach(p => { p.vx *= 1.5; p.vy *= 1.5; });
+        }
+
+        // --- NEURAL LINK (CHAT) LOGIC ---
+        function toggleChat() {
+            const overlay = document.getElementById('chat-overlay');
+            overlay.style.display = overlay.style.display === 'none' ? 'flex' : 'none';
+        }
+
+        async function sendChat() {
+            const input = document.getElementById('chat-input');
+            const history = document.getElementById('chat-history');
+            const msg = input.value.trim();
+            if (!msg) return;
+
+            // Add User Message
+            const userDiv = document.createElement('div');
+            userDiv.style.alignSelf = 'flex-end';
+            userDiv.style.background = 'rgba(0, 255, 204, 0.1)';
+            userDiv.style.padding = '8px 12px';
+            userDiv.style.borderRadius = '8px';
+            userDiv.style.color = 'var(--phi)';
+            userDiv.innerText = msg;
+            history.appendChild(userDiv);
+            input.value = '';
+            history.scrollTop = history.scrollHeight;
+
+            try {
+                const res = await fetch('/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: msg })
+                });
+                const data = await res.json();
+
+                // Add System Reply
+                const sysDiv = document.createElement('div');
+                sysDiv.style.alignSelf = 'flex-start';
+                sysDiv.style.background = 'rgba(255, 255, 255, 0.05)';
+                sysDiv.style.padding = '8px 12px';
+                sysDiv.style.borderRadius = '8px';
+                sysDiv.style.borderLeft = `2px solid ${data.source === 'LLM' ? 'var(--accent)' : '#ff3333'}`;
+                sysDiv.innerText = data.reply;
+                history.appendChild(sysDiv);
+            } catch (e) {
+                log("NEURAL LINK ERROR: DISCONNECTED.");
+            }
+            history.scrollTop = history.scrollHeight;
+        }
+
+        async function fetchTelemetry() {
+            try {
+                const res = await fetch('/telemetry');
+                const data = await res.json();
+                document.getElementById('flux-val').innerText = data.flux.toFixed(4);
+                document.getElementById('heartbeat-val').innerText = data.heartbeat;
+                document.getElementById('lambda-load').innerText = data.lambda_load + "%";
+                document.getElementById('phi-load').innerText = data.phi_load + "%";
+                document.getElementById('coherence-val').innerText = (data.coherence * 100).toFixed(1) + "%";
+            } catch (e) {
+                console.error("Telemetry Link Failure", e);
+            }
+        }
+
+        setInterval(fetchTelemetry, 2000);
+        fetchTelemetry();
+        async function fetchModels() {
+            try {
+                const res = await fetch('/models');
+                const data = await res.json();
+                const select = document.getElementById('model-select');
+                select.innerHTML = '';
+                if (data.models && data.models.length > 0) {
+                    data.models.forEach(m => {
+                        let opt = document.createElement('option');
+                        opt.value = m;
+                        opt.innerText = m.split('/').pop().split('\\').pop();
+                        select.appendChild(opt);
+                    });
+                } else {
+                    select.innerHTML = '<option value="">No Models Discovered</option>';
+                }
+            } catch { }
+        }
+        fetchModels();
+
+        async function triggerSeeding() {
+            const path = document.getElementById('model-select').value;
+            if (!path) return log("SELECT A MODEL FIRST.");
+
+            log("INJECTING DNA INTO GGUF MANIFOLD...");
+            const res = await fetch(`/seed?path=${encodeURIComponent(path)}`, { method: 'POST' });
+            const data = await res.json();
+            if (data.status === "SUCCESS") {
+                log("GGUF SEEDED. BIOGENESIS COMPLETE.");
+            } else {
+                log(`ERROR: ${data.msg}`);
+            }
+        }
+
+        // Telemetry Polling
+        setInterval(async () => {
+            try {
+                const res = await fetch('/telemetry');
+                const data = await res.json();
+                if (data.flux) {
+                    document.getElementById('flux-val').innerText = data.flux.toFixed(6);
+                    document.getElementById('heartbeat-val').innerText = data.heartbeat || "ACTIVE";
+                }
+            } catch { }
+        }, 1000);
+
+    </script>
+</body>
+
+</html>
