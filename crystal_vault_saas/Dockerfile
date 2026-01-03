@@ -6,6 +6,7 @@ FROM python:3.11-slim
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
+ENV PORT=8000
 
 # Set work directory
 WORKDIR /app
@@ -25,8 +26,8 @@ COPY . .
 # Create necessary directories
 RUN mkdir -p /app/vaults
 
-# Expose port (Railway uses $PORT)
+# Expose port
 EXPOSE 8000
 
-# Run the application - Railway will override with $PORT
-CMD ["uvicorn", "backend.app:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run the application - use shell form to expand $PORT
+CMD uvicorn backend.app:app --host 0.0.0.0 --port ${PORT:-8000}
