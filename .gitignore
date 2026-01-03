@@ -1,61 +1,36 @@
-# PRIVATE FILES - NEVER COMMIT (Contains SSN and sensitive data)
-MAXIMUM_SECURITY_PROOF_PRIVATE.json
-tools/holographic_proof_MAXIMUM_SECURITY.py
-*PRIVATE*
-*_PRIVATE_*
-*.private
-
-# Python
+﻿# Python
 __pycache__/
 *.py[cod]
-*$py.class
+*.class
 *.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
+*.pyd
 
-# Virtual environments
-venv/
-ENV/
-env/
-.venv/
+# Memory files (runtime generated)
+*_memory.json
+crystal_memory.json
+
+# Private/sensitive files
+MAXIMUM_SECURITY_PROOF_PRIVATE.json
+tools/holographic_proof_MAXIMUM_SECURITY.py
 
 # IDE
 .idea/
 .vscode/
 *.swp
 *.swo
-*~
-
-# Test artifacts
-*.npz
-checkpoint_*.npz
-test.txt
-*.decompressed
-*.holo
-
-# Logs
-*.log
-telemetry.json
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Temporary files
-*.tmp
-*.temp
+# Build
+build/
+dist/
+*.egg-info/
 
+# Logs
+*.log
+
+# Private keys
+CRYSTAL_PRIVATE_KEY.pem
+*.pem
