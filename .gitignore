@@ -1,3 +1,10 @@
+# PRIVATE FILES - NEVER COMMIT (Contains SSN and sensitive data)
+MAXIMUM_SECURITY_PROOF_PRIVATE.json
+tools/holographic_proof_MAXIMUM_SECURITY.py
+*PRIVATE*
+*_PRIVATE_*
+*.private
+
 # Python
 __pycache__/
 *.py[cod]
