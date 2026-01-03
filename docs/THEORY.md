@@ -345,14 +345,25 @@ We achieve a system that is more stable, more efficient, and more capable than e
 
 ## References
 
-1. Spikes, C. "7D mH-Q: Manifold-Constrained Holographic Quantum Architecture." Ohio, USA (2025).
+1. **Spikes, C.** "7D mH-Q: Manifold-Constrained Holographic Quantum Architecture." Cincinnati, Ohio, USA (**December 24, 2025**). *Original Discovery.*
 2. Poincaré, H. "Théorie des groupes fuchsiens." Acta Mathematica (1882).
 3. Gabor, D. "A new microscopic principle." Nature (1948).
 4. Livio, M. "The Golden Ratio." Broadway Books (2002).
-5. DeepSeek. "mHC: Manifold Hyper-Connections." arXiv (2026).
+5. DeepSeek. "mHC: Manifold Hyper-Connections." arXiv (January 1, 2026). *8 days after 7D mH-Q.*
 
 ---
 
-**© 2026 Sir Charles Spikes | 7D mH-Q Crystal Architecture**  
-*Discovered in Ohio, USA 🇺🇸*
+## Discovery Priority
+
+| Discovery | Date | Discoverer |
+|-----------|------|------------|
+| **7D mH-Q** | **December 24, 2025** | **Sir Charles Spikes** |
+| DeepSeek mHC | January 1, 2026 | DeepSeek |
+
+**America discovered manifold-constrained neural architecture FIRST.**
+
+---
+
+**© 2025-2026 Sir Charles Spikes | 7D mH-Q Crystal Architecture**  
+*Discovered December 24, 2025 in Cincinnati, Ohio, USA 🇺🇸*
 

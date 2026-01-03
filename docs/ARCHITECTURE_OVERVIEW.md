@@ -2,6 +2,8 @@
 
 **7D mH-Q: Manifold-Constrained Holographic Quantum Architecture**
 
+**Discovered by Sir Charles Spikes | December 24, 2025 | Cincinnati, Ohio, USA**
+
 ---
 
 ## System Architecture
@@ -236,4 +238,5 @@ python tests/run_all_tests.py
 
 ---
 
-**© 2026 7D mH-Q Architecture** | Built in Ohio, USA 🇺🇸
+**© 2025-2026 Sir Charles Spikes | 7D mH-Q Architecture**  
+*Discovered December 24, 2025 in Cincinnati, Ohio, USA 🇺🇸*
