@@ -50,8 +50,13 @@ class ManifoldLoss:
         Returns:
             (total_loss, loss_components)
         """
+        # Ensure same shape for MSE computation
+        pred_flat = predictions.flatten()
+        targ_flat = targets.flatten()
+        min_len = min(len(pred_flat), len(targ_flat))
+        
         # Standard MSE loss
-        mse_loss = np.mean((predictions - targets) ** 2)
+        mse_loss = np.mean((pred_flat[:min_len] - targ_flat[:min_len]) ** 2)
         
         # Manifold stability loss (S²)
         # Penalize weights that drift from the manifold
@@ -165,24 +170,38 @@ class CrystalTrainingPipeline:
         Single training step.
         
         Args:
-            batch_x: Input batch
-            batch_y: Target batch
+            batch_x: Input batch (batch_size, features) or (features,)
+            batch_y: Target batch (batch_size, features) or (features,)
             
         Returns:
             Loss components
         """
-        # Forward pass (simple linear for now)
-        predictions = np.dot(batch_x, self.weights[:batch_x.shape[1]]) if batch_x.ndim > 1 else batch_x * self.weights[:len(batch_x)]
+        # Handle dimensions - flatten targets for simple linear model
+        if batch_y.ndim > 1:
+            # Reduce targets to scalar per sample (mean across features)
+            targets = np.mean(batch_y, axis=-1)
+        else:
+            targets = batch_y
+        
+        # Forward pass (simple linear - outputs one scalar per sample)
+        if batch_x.ndim > 1:
+            # Use subset of weights matching input features
+            weight_slice = self.weights[:batch_x.shape[1]]
+            predictions = np.dot(batch_x, weight_slice)
+        else:
+            weight_slice = self.weights[:len(batch_x)]
+            predictions = np.dot(batch_x, weight_slice)
         
         # Compute loss
-        loss, components = self.loss_fn(predictions, batch_y, self.weights)
+        loss, components = self.loss_fn(predictions, targets, self.weights)
         
         # Backward pass (gradient approximation)
         if batch_x.ndim > 1:
-            error = predictions - batch_y
+            error = predictions - targets
+            # Outer product for gradient: (features,) from (batch, features).T @ (batch,)
             gradients = np.dot(batch_x.T, error) / len(batch_x)
         else:
-            gradients = (predictions - batch_y) * batch_x / len(batch_x)
+            gradients = (predictions - targets) * batch_x
         
         # Pad gradients to match weight size
         full_grad = np.zeros_like(self.weights)

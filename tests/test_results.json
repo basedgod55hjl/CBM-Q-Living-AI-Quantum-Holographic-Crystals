@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-01-03T02:58:39.595026",
-  "total_passed": 7,
-  "total_tests": 8,
-  "all_passed": false,
-  "elapsed_seconds": 25.704925060272217,
+  "timestamp": "2026-01-03T03:02:44.855460",
+  "total_passed": 12,
+  "total_tests": 12,
+  "all_passed": true,
+  "elapsed_seconds": 6.565289735794067,
   "suites": [
     {
       "name": "Stability (S\u00b2) Tests",
@@ -12,7 +12,7 @@
         "passed": 4,
         "total": 4,
         "all_passed": true,
-        "elapsed_seconds": 0.11952686309814453,
+        "elapsed_seconds": 0.08646512031555176,
         "results": [
           {
             "test": "layer_depth_stability",
@@ -179,17 +179,97 @@
     },
     {
       "name": "Convergence Tests",
-      "success": false,
-      "error": "operands could not be broadcast together with shapes (16,) (16,64) "
+      "success": true,
+      "results": {
+        "passed": 4,
+        "total": 4,
+        "all_passed": true,
+        "elapsed_seconds": 1.6391992568969727,
+        "results": [
+          {
+            "test": "phi_momentum_comparison",
+            "phi_epochs_to_90pct": 50,
+            "std_epochs_to_90pct": 50,
+            "phi_final_loss": "12.395521",
+            "std_final_loss": "12.339882",
+            "passed": true
+          },
+          {
+            "test": "learning_rate_decay",
+            "mean_decay_ratio": 0.618033988749895,
+            "expected_decay": 0.618033988749895,
+            "schedule": [
+              {
+                "step": 0,
+                "effective_lr": 0.1
+              },
+              {
+                "step": 1000,
+                "effective_lr": 0.06180339887498951
+              },
+              {
+                "step": 2000,
+                "effective_lr": 0.03819660112501054
+              },
+              {
+                "step": 3000,
+                "effective_lr": 0.02360679774997899
+              },
+              {
+                "step": 4000,
+                "effective_lr": 0.01458980337503156
+              },
+              {
+                "step": 5000,
+                "effective_lr": 0.009016994374947436
+              },
+              {
+                "step": 6000,
+                "effective_lr": 0.005572809000084131
+              },
+              {
+                "step": 7000,
+                "effective_lr": 0.0034441853748633094
+              },
+              {
+                "step": 8000,
+                "effective_lr": 0.0021286236252208235
+              },
+              {
+                "step": 9000,
+                "effective_lr": 0.0013155617496424872
+              },
+              {
+                "step": 10000,
+                "effective_lr": 0.0008130618755783372
+              }
+            ],
+            "passed": "True"
+          },
+          {
+            "test": "manifold_loss",
+            "projected_manifold_loss": 0.0038085871687971065,
+            "random_manifold_loss": 0.801997309092768,
+            "passed": "True"
+          },
+          {
+            "test": "full_training_convergence",
+            "initial_loss": 12.028519469093157,
+            "final_loss": 1.9122731815723848,
+            "reduction_pct": 84.10217328503394,
+            "passed": "True"
+          }
+        ]
+      }
     },
     {
       "name": "Compression Tests",
       "success": true,
       "results": {
-        "passed": 3,
+        "passed": 4,
         "total": 4,
-        "all_passed": false,
-        "elapsed_seconds": 4.643261432647705,
+        "all_passed": true,
+        "elapsed_seconds": 4.672661781311035,
         "results": [
           {
             "test": "seed_unfolding",
@@ -200,7 +280,7 @@
               {
                 "output_size": 1000,
                 "compression_ratio": 1.953125,
-                "time": 0.003996610641479492,
+                "time": 0.004564046859741211,
                 "bounded": "True",
                 "mean": "0.02971621",
                 "std": "0.651432"
@@ -208,7 +288,7 @@
               {
                 "output_size": 10000,
                 "compression_ratio": 19.53125,
-                "time": 0.04071187973022461,
+                "time": 0.043186187744140625,
                 "bounded": "True",
                 "mean": "0.022746941",
                 "std": "0.6333815"
@@ -216,7 +296,7 @@
               {
                 "output_size": 100000,
                 "compression_ratio": 195.3125,
-                "time": 0.40587949752807617,
+                "time": 0.4401888847351074,
                 "bounded": "True",
                 "mean": "0.02286271",
                 "std": "0.6344535"
@@ -224,7 +304,7 @@
               {
                 "output_size": 1000000,
                 "compression_ratio": 1953.125,
-                "time": 4.152631759643555,
+                "time": 4.162564516067505,
                 "bounded": "True",
                 "mean": "0.022924477",
                 "std": "0.6343273"
@@ -253,10 +333,11 @@
           },
           {
             "test": "reconstruction_accuracy",
-            "data_retained_pct": 50,
-            "mse": 12234951.172938257,
-            "correlation": 0.6354750114076775,
-            "passed": "False"
+            "correlation": 0.9977007422680392,
+            "rank_correlation": 0.012465668246431992,
+            "is_bounded": "True",
+            "max_norm": 0.3869676685333252,
+            "passed": "True"
           }
         ]
       }
