@@ -1,0 +1,17 @@
+{
+  "algorithm": "7D-mHQ-Quantum-Signature",
+  "message_hash": "b2a9b6e7265e51e75f857035eff0580dab3b29235d1ddf151501eafd62156855",
+  "signature": "REDn72OJEefNIQU2Vo0ltrcT5YdaMsrj52vsTKx/U8oA4jrU8MvAdJDfNZKnkR5uw+aA1DBG1IfB3o2ZECVMCg==",
+  "manifold_signature": [
+    0.5588397922687949,
+    0.5583710906604805,
+    0.5584185431806828,
+    0.5584704258458606,
+    0.5586277931755732,
+    0.5589189225234742,
+    0.5591881984927993
+  ],
+  "crystal_dna": "ARLR-SLYY-TCYC-TRYS-TTSL-ASSS-LYCC",
+  "signed_at": "2026-01-03T09:08:44.297637Z",
+  "key_id": "7DMHQ-ASCR-SLRT-SLTL-TYSC-TSTR-ATTL-LRRT"
+}
