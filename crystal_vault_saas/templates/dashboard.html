@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crystal Vault - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔮</text></svg>">
+</head>
+<body>
+    <div id="app">
+        <!-- Auth Screen -->
+        <div id="auth-screen" class="auth-screen">
+            <div class="auth-container">
+                <div class="auth-header">
+                    <span class="logo-icon">🔮</span>
+                    <h1>Crystal Vault</h1>
+                    <p>Quantum-Secure Password Manager</p>
+                </div>
+                
+                <!-- Login Form -->
+                <div id="login-form" class="auth-form">
+                    <h2>Welcome Back</h2>
+                    <form onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="login-email" required placeholder="you@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Master Password</label>
+                            <input type="password" id="login-password" required placeholder="••••••••••••">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Unlock Vault</button>
+                    </form>
+                    <p class="auth-switch">Don't have an account? <a href="#" onclick="showRegister()">Create one</a></p>
+                </div>
+                
+                <!-- Register Form -->
+                <div id="register-form" class="auth-form" style="display: none;">
+                    <h2>Create Your Vault</h2>
+                    <form onsubmit="handleRegister(event)">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" id="register-name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" id="register-email" required placeholder="you@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Master Password</label>
+                            <input type="password" id="register-password" required placeholder="Choose a strong password" oninput="checkPasswordStrength(this.value)">
+                            <div id="password-strength" class="password-strength"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Create Vault</button>
+                    </form>
+                    <p class="auth-switch">Already have an account? <a href="#" onclick="showLogin()">Sign in</a></p>
+                </div>
+                
+                <div class="auth-footer">
+                    <p>🛡️ Protected by 7D mH-Q Architecture</p>
+                    <p>10<sup>77</sup> years to crack</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Dashboard -->
+        <div id="dashboard" class="dashboard" style="display: none;">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <span class="logo-icon">🔮</span>
+                    <span class="logo-text">Crystal Vault</span>
+                </div>
+                
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-item active" onclick="showSection('passwords')">
+                        <span class="nav-icon">🔐</span>
+                        <span>Passwords</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="showSection('generator')">
+                        <span class="nav-icon">🎲</span>
+                        <span>Generator</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="showSection('security')">
+                        <span class="nav-icon">🛡️</span>
+                        <span>Security</span>
+                    </a>
+                    <a href="#" class="nav-item" onclick="showSection('settings')">
+                        <span class="nav-icon">⚙️</span>
+                        <span>Settings</span>
+                    </a>
+                </nav>
+                
+                <div class="sidebar-footer">
+                    <div class="user-info">
+                        <div class="user-avatar">👤</div>
+                        <div class="user-details">
+                            <span id="user-name">User</span>
+                            <span id="user-tier" class="tier-badge">FREE</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-ghost" onclick="handleLogout()">Logout</button>
+                </div>
+            </aside>
+            
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Passwords Section -->
+                <section id="passwords-section" class="section">
+                    <div class="section-header">
+                        <h1>Passwords</h1>
+                        <button class="btn btn-primary" onclick="showAddModal()">
+                            <span>+</span> Add Password
+                        </button>
+                    </div>
+                    
+                    <div class="search-bar">
+                        <input type="text" id="search-input" placeholder="Search passwords..." oninput="searchPasswords(this.value)">
+                    </div>
+                    
+                    <div id="entries-list" class="entries-list">
+                        <!-- Entries will be loaded here -->
+                    </div>
+                </section>
+                
+                <!-- Generator Section -->
+                <section id="generator-section" class="section" style="display: none;">
+                    <div class="section-header">
+                        <h1>Password Generator</h1>
+                    </div>
+                    
+                    <div class="generator-card">
+                        <div class="generated-password">
+                            <input type="text" id="generated-password" readonly value="Click Generate">
+                            <button class="btn btn-ghost" onclick="copyPassword()">📋</button>
+                        </div>
+                        
+                        <div class="generator-options">
+                            <div class="option-row">
+                                <label>Length: <span id="length-value">20</span></label>
+                                <input type="range" id="password-length" min="8" max="64" value="20" oninput="updateLengthValue(this.value)">
+                            </div>
+                            
+                            <div class="option-row checkboxes">
+                                <label><input type="checkbox" id="use-lowercase" checked> Lowercase (a-z)</label>
+                                <label><input type="checkbox" id="use-uppercase" checked> Uppercase (A-Z)</label>
+                                <label><input type="checkbox" id="use-digits" checked> Numbers (0-9)</label>
+                                <label><input type="checkbox" id="use-symbols" checked> Symbols (!@#$)</label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-block" onclick="generatePassword()">Generate Password</button>
+                        
+                        <div id="strength-display" class="strength-display">
+                            <div class="strength-bar">
+                                <div class="strength-fill"></div>
+                            </div>
+                            <span class="strength-text">Generate a password to see strength</span>
+                        </div>
+                    </div>
+                    
+                    <div class="generator-card">
+                        <h3>Passphrase Generator</h3>
+                        <div class="generated-password">
+                            <input type="text" id="generated-passphrase" readonly value="Click Generate">
+                            <button class="btn btn-ghost" onclick="copyPassphrase()">📋</button>
+                        </div>
+                        <div class="option-row">
+                            <label>Words: <span id="words-value">5</span></label>
+                            <input type="range" id="word-count" min="3" max="10" value="5" oninput="updateWordsValue(this.value)">
+                        </div>
+                        <button class="btn btn-outline btn-block" onclick="generatePassphrase()">Generate Passphrase</button>
+                    </div>
+                </section>
+                
+                <!-- Security Section -->
+                <section id="security-section" class="section" style="display: none;">
+                    <div class="section-header">
+                        <h1>Security Status</h1>
+                    </div>
+                    
+                    <div class="security-cards">
+                        <div class="security-card">
+                            <div class="security-icon">🛡️</div>
+                            <h3>Vault Protection</h3>
+                            <p class="security-status good">UNHACKABLE</p>
+                            <p>10<sup>77</sup> years to crack</p>
+                        </div>
+                        
+                        <div class="security-card">
+                            <div class="security-icon">🧬</div>
+                            <h3>Crystal DNA</h3>
+                            <p id="crystal-dna" class="crystal-dna">Loading...</p>
+                        </div>
+                        
+                        <div class="security-card">
+                            <div class="security-icon">🔐</div>
+                            <h3>Encryption</h3>
+                            <p>7D mH-Q Manifold</p>
+                            <p>512-bit keys • 7 rounds</p>
+                        </div>
+                        
+                        <div class="security-card">
+                            <div class="security-icon">📊</div>
+                            <h3>Vault Stats</h3>
+                            <p id="entry-count">0 entries</p>
+                            <p id="tier-info">Free tier</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Settings Section -->
+                <section id="settings-section" class="section" style="display: none;">
+                    <div class="section-header">
+                        <h1>Settings</h1>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3>Account</h3>
+                        <p>Email: <span id="settings-email">-</span></p>
+                        <p>Tier: <span id="settings-tier">Free</span></p>
+                        <button class="btn btn-primary" onclick="upgradeTier()">Upgrade to Pro</button>
+                    </div>
+                    
+                    <div class="settings-card">
+                        <h3>Export</h3>
+                        <p>Download an encrypted backup of your vault.</p>
+                        <button class="btn btn-outline" onclick="exportVault()">Export Backup</button>
+                    </div>
+                    
+                    <div class="settings-card danger">
+                        <h3>Danger Zone</h3>
+                        <p>Permanently delete your vault and all data.</p>
+                        <button class="btn btn-danger" onclick="deleteAccount()">Delete Account</button>
+                    </div>
+                </section>
+            </main>
+        </div>
+        
+        <!-- Add/Edit Modal -->
+        <div id="entry-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modal-title">Add Password</h2>
+                    <button class="modal-close" onclick="closeModal()">&times;</button>
+                </div>
+                <form id="entry-form" onsubmit="handleEntrySubmit(event)">
+                    <input type="hidden" id="entry-id">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" id="entry-name" required placeholder="e.g., Gmail, Netflix">
+                    </div>
+                    <div class="form-group">
+                        <label>Username / Email</label>
+                        <input type="text" id="entry-username" required placeholder="your@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <div class="password-input">
+                            <input type="password" id="entry-password" required placeholder="••••••••">
+                            <button type="button" class="btn btn-ghost" onclick="togglePasswordVisibility()">👁️</button>
+                            <button type="button" class="btn btn-ghost" onclick="generateForEntry()">🎲</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>URL (optional)</label>
+                        <input type="url" id="entry-url" placeholder="https://example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Notes (optional)</label>
+                        <textarea id="entry-notes" rows="3" placeholder="Additional notes..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <select id="entry-category">
+                            <option value="general">General</option>
+                            <option value="social">Social</option>
+                            <option value="work">Work</option>
+                            <option value="finance">Finance</option>
+                            <option value="shopping">Shopping</option>
+                        </select>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- View Entry Modal -->
+        <div id="view-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="view-title">Entry Details</h2>
+                    <button class="modal-close" onclick="closeViewModal()">&times;</button>
+                </div>
+                <div class="view-content">
+                    <div class="view-field">
+                        <label>Username</label>
+                        <div class="view-value">
+                            <span id="view-username">-</span>
+                            <button class="btn btn-ghost" onclick="copyField('view-username')">📋</button>
+                        </div>
+                    </div>
+                    <div class="view-field">
+                        <label>Password</label>
+                        <div class="view-value">
+                            <span id="view-password" class="password-hidden">••••••••</span>
+                            <button class="btn btn-ghost" onclick="toggleViewPassword()">👁️</button>
+                            <button class="btn btn-ghost" onclick="copyField('view-password')">📋</button>
+                        </div>
+                    </div>
+                    <div class="view-field">
+                        <label>URL</label>
+                        <div class="view-value">
+                            <a id="view-url" href="#" target="_blank">-</a>
+                        </div>
+                    </div>
+                    <div class="view-field">
+                        <label>Notes</label>
+                        <p id="view-notes">-</p>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-ghost" onclick="editEntry()">Edit</button>
+                    <button class="btn btn-danger" onclick="deleteEntry()">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>
+

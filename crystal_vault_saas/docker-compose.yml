@@ -1,0 +1,46 @@
+# Crystal Vault SaaS - Docker Compose
+# Production deployment configuration
+
+version: '3.8'
+
+services:
+  crystal-vault:
+    build: .
+    container_name: crystal-vault-saas
+    ports:
+      - "8000:8000"
+    environment:
+      - SECRET_KEY=${SECRET_KEY:-your-super-secret-key-change-in-production}
+      - ENVIRONMENT=production
+    volumes:
+      - vault-data:/app/vaults
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # Optional: Nginx reverse proxy
+  nginx:
+    image: nginx:alpine
+    container_name: crystal-vault-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - crystal-vault
+    restart: unless-stopped
+
+volumes:
+  vault-data:
+    driver: local
+
+networks:
+  default:
+    name: crystal-vault-network
+
