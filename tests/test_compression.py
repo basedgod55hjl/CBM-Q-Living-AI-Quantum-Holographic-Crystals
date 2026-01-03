@@ -323,9 +323,9 @@ class CompressionTester:
         print(f"Time elapsed: {elapsed:.2f}s")
         
         if passed_count == total_count:
-            print("\n✅ ALL TESTS PASSED - COMPRESSION VERIFIED")
+            print("\n[SUCCESS] ALL TESTS PASSED - COMPRESSION VERIFIED")
         else:
-            print(f"\n⚠️ {total_count - passed_count} TESTS FAILED")
+            print(f"\n[WARNING] {total_count - passed_count} TESTS FAILED")
         
         return {
             'passed': passed_count,

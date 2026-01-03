@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 7D mH-Q: Convergence Testing Suite
-Tests Φ-Momentum optimizer and training convergence.
+Tests Phi-Momentum optimizer and training convergence.
 """
 
 import sys
@@ -46,19 +46,19 @@ class ConvergenceTester:
     
     def test_phi_momentum_vs_standard(self, epochs: int = 50) -> dict:
         """
-        Compare Φ-momentum against standard momentum.
+        Compare Phi-momentum against standard momentum.
         """
         print(f"\n{'='*60}")
-        print("TEST: Φ-Momentum vs Standard Momentum")
+        print("TEST: Phi-Momentum vs Standard Momentum")
         print(f"{'='*60}")
         
         data, true_weights = self.generate_synthetic_data(500, 64)
         
         # Test configurations
         configs = [
-            ("Standard (β=0.9)", 0.9),
-            ("Φ-Momentum (β=Φ⁻¹)", PHI_INV),
-            ("High (β=0.99)", 0.99),
+            ("Standard (beta=0.9)", 0.9),
+            ("Phi-Momentum (beta=Phi^-1)", PHI_INV),
+            ("High (beta=0.99)", 0.99),
         ]
         
         results = {}
@@ -124,8 +124,8 @@ class ConvergenceTester:
             optimizer.phi_inv = original_phi_inv
         
         # Determine winner
-        phi_result = results["Φ-Momentum (β=Φ⁻¹)"]
-        std_result = results["Standard (β=0.9)"]
+        phi_result = results["Phi-Momentum (beta=Phi^-1)"]
+        std_result = results["Standard (beta=0.9)"]
         
         phi_faster = phi_result['epochs_to_90pct'] < std_result['epochs_to_90pct']
         phi_better_loss = phi_result['final_loss'] < std_result['final_loss']
@@ -143,7 +143,7 @@ class ConvergenceTester:
         
         self.results.append(result)
         print(f"\n{'PASSED' if passed else 'FAILED'}: "
-              f"Φ-Momentum {'is' if passed else 'is not'} superior")
+              f"Phi-Momentum {'is' if passed else 'is not'} superior")
         
         return result
     
@@ -215,7 +215,7 @@ class ConvergenceTester:
             ("Random weights", np.random.randn(64)),
             ("Projected weights", pattern_gen.manifold_constrained_projection(
                 np.random.randn(1, 64)).flatten()),
-            ("Φ-aligned weights", np.array([PHI * i for i in range(64)])),
+            ("Phi-aligned weights", np.array([PHI * i for i in range(64)])),
         ]
         
         loss_values = []
@@ -339,9 +339,9 @@ class ConvergenceTester:
         print(f"Time elapsed: {elapsed:.2f}s")
         
         if passed_count == total_count:
-            print("\n✅ ALL TESTS PASSED - CONVERGENCE VERIFIED")
+            print("\n[SUCCESS] ALL TESTS PASSED - CONVERGENCE VERIFIED")
         else:
-            print(f"\n⚠️ {total_count - passed_count} TESTS FAILED")
+            print(f"\n[WARNING] {total_count - passed_count} TESTS FAILED")
         
         return {
             'passed': passed_count,

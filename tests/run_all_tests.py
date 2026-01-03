@@ -17,19 +17,12 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 def print_banner():
     """Print test banner."""
     banner = """
-╔══════════════════════════════════════════════════════════════════╗
-║                                                                  ║
-║   ████████╗ ██████╗     ███╗   ███╗██╗  ██╗       ██████╗       ║
-║   ╚════██║ ██╔══██╗    ████╗ ████║██║  ██║      ██╔═══██╗      ║
-║       ██╔╝ ██║  ██║    ██╔████╔██║███████║█████╗██║   ██║      ║
-║      ██╔╝  ██║  ██║    ██║╚██╔╝██║██╔══██║╚════╝██║▄▄ ██║      ║
-║      ██║   ██████╔╝    ██║ ╚═╝ ██║██║  ██║      ╚██████╔╝      ║
-║      ╚═╝   ╚═════╝     ╚═╝     ╚═╝╚═╝  ╚═╝       ╚══▀▀═╝       ║
-║                                                                  ║
-║   COMPREHENSIVE TEST SUITE                                       ║
-║   Crystal Architecture Verification                              ║
-║                                                                  ║
-╚══════════════════════════════════════════════════════════════════╝
+================================================================
+    7D mH-Q CRYSTAL ARCHITECTURE
+    COMPREHENSIVE TEST SUITE
+    
+    Verifying S2 Super-Stability, Convergence, and Compression
+================================================================
 """
     print(banner)
 
@@ -49,7 +42,7 @@ def run_test_suite(name: str, test_module):
             'results': results
         }
     except Exception as e:
-        print(f"\n❌ ERROR in {name}: {e}")
+        print(f"\n[ERROR] in {name}: {e}")
         return {
             'name': name,
             'success': False,
@@ -118,7 +111,7 @@ def main():
             status = "[PASS]" if results['all_passed'] else "[WARN]"
             print(f"  {status} {name}: {passed}/{total} passed")
         else:
-            print(f"  ❌ {name}: FAILED TO RUN - {suite.get('error', 'Unknown error')}")
+            print(f"  [FAIL] {name}: FAILED TO RUN - {suite.get('error', 'Unknown error')}")
     
     print(f"\n  Total: {total_passed}/{total_tests} tests passed")
     print(f"  Time: {total_time:.2f} seconds")

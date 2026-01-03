@@ -1,0 +1,265 @@
+{
+  "timestamp": "2026-01-03T02:58:39.595026",
+  "total_passed": 7,
+  "total_tests": 8,
+  "all_passed": false,
+  "elapsed_seconds": 25.704925060272217,
+  "suites": [
+    {
+      "name": "Stability (S\u00b2) Tests",
+      "success": true,
+      "results": {
+        "passed": 4,
+        "total": 4,
+        "all_passed": true,
+        "elapsed_seconds": 0.11952686309814453,
+        "results": [
+          {
+            "test": "layer_depth_stability",
+            "layers_tested": 1000,
+            "all_bounded": true,
+            "all_nonzero": true,
+            "converged": "True",
+            "final_norm": 0.18021887058078168,
+            "passed": true,
+            "details": [
+              {
+                "layer": 1,
+                "signal_norm": 0.8052290807963807,
+                "change": 6.482818172161339,
+                "bounded": "True",
+                "stable": true,
+                "nonzero": "True"
+              },
+              {
+                "layer": 10,
+                "signal_norm": 0.17940448664267034,
+                "change": 0.0024059996391830553,
+                "bounded": "True",
+                "stable": "True",
+                "nonzero": "True"
+              },
+              {
+                "layer": 50,
+                "signal_norm": 0.1802188705807809,
+                "change": 1.4497819645141055e-13,
+                "bounded": "True",
+                "stable": "True",
+                "nonzero": "True"
+              },
+              {
+                "layer": 100,
+                "signal_norm": 0.18021887058078168,
+                "change": 0.0,
+                "bounded": "True",
+                "stable": "True",
+                "nonzero": "True"
+              },
+              {
+                "layer": 250,
+                "signal_norm": 0.18021887058078168,
+                "change": 0.0,
+                "bounded": "True",
+                "stable": "True",
+                "nonzero": "True"
+              },
+              {
+                "layer": 500,
+                "signal_norm": 0.18021887058078168,
+                "change": 0.0,
+                "bounded": "True",
+                "stable": "True",
+                "nonzero": "True"
+              },
+              {
+                "layer": 750,
+                "signal_norm": 0.18021887058078168,
+                "change": 0.0,
+                "bounded": "True",
+                "stable": "True",
+                "nonzero": "True"
+              },
+              {
+                "layer": 1000,
+                "signal_norm": 0.18021887058078168,
+                "change": 0.0,
+                "bounded": "True",
+                "stable": "True",
+                "nonzero": "True"
+              }
+            ]
+          },
+          {
+            "test": "gradient_flow",
+            "layers": 100,
+            "final_gradient_magnitude": "0.18021888",
+            "all_bounded": true,
+            "all_nonzero": true,
+            "passed": true,
+            "details": [
+              {
+                "layer": 10,
+                "magnitude": "0.18072787",
+                "bounded": "True",
+                "nonzero": "True"
+              },
+              {
+                "layer": 20,
+                "magnitude": "0.18021937",
+                "bounded": "True",
+                "nonzero": "True"
+              },
+              {
+                "layer": 30,
+                "magnitude": "0.18021886",
+                "bounded": "True",
+                "nonzero": "True"
+              },
+              {
+                "layer": 40,
+                "magnitude": "0.18021888",
+                "bounded": "True",
+                "nonzero": "True"
+              },
+              {
+                "layer": 50,
+                "magnitude": "0.18021888",
+                "bounded": "True",
+                "nonzero": "True"
+              },
+              {
+                "layer": 60,
+                "magnitude": "0.18021888",
+                "bounded": "True",
+                "nonzero": "True"
+              },
+              {
+                "layer": 70,
+                "magnitude": "0.18021888",
+                "bounded": "True",
+                "nonzero": "True"
+              },
+              {
+                "layer": 80,
+                "magnitude": "0.18021888",
+                "bounded": "True",
+                "nonzero": "True"
+              },
+              {
+                "layer": 90,
+                "magnitude": "0.18021888",
+                "bounded": "True",
+                "nonzero": "True"
+              },
+              {
+                "layer": 100,
+                "magnitude": "0.18021888",
+                "bounded": "True",
+                "nonzero": "True"
+              }
+            ]
+          },
+          {
+            "test": "lipschitz_bound",
+            "max_lipschitz": 0.13308143420374152,
+            "mean_lipschitz": 0.10407839423601586,
+            "theoretical_bound": 1.618033988749895,
+            "passed": "True"
+          },
+          {
+            "test": "quantum_field_stability",
+            "initial_energy": "1053.0199",
+            "final_energy": 700.9174606806281,
+            "energy_ratio": 0.6656260364791722,
+            "field_bounded": "True",
+            "passed": "True"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Convergence Tests",
+      "success": false,
+      "error": "operands could not be broadcast together with shapes (16,) (16,64) "
+    },
+    {
+      "name": "Compression Tests",
+      "success": true,
+      "results": {
+        "passed": 3,
+        "total": 4,
+        "all_passed": false,
+        "elapsed_seconds": 4.643261432647705,
+        "results": [
+          {
+            "test": "seed_unfolding",
+            "max_compression_ratio": 1953.125,
+            "all_bounded": true,
+            "passed": true,
+            "details": [
+              {
+                "output_size": 1000,
+                "compression_ratio": 1.953125,
+                "time": 0.003996610641479492,
+                "bounded": "True",
+                "mean": "0.02971621",
+                "std": "0.651432"
+              },
+              {
+                "output_size": 10000,
+                "compression_ratio": 19.53125,
+                "time": 0.04071187973022461,
+                "bounded": "True",
+                "mean": "0.022746941",
+                "std": "0.6333815"
+              },
+              {
+                "output_size": 100000,
+                "compression_ratio": 195.3125,
+                "time": 0.40587949752807617,
+                "bounded": "True",
+                "mean": "0.02286271",
+                "std": "0.6344535"
+              },
+              {
+                "output_size": 1000000,
+                "compression_ratio": 1953.125,
+                "time": 4.152631759643555,
+                "bounded": "True",
+                "mean": "0.022924477",
+                "std": "0.6343273"
+              }
+            ]
+          },
+          {
+            "test": "holographic_encoding",
+            "bounded": "True",
+            "smooth": "True",
+            "interference_range": [
+              "3.0775461e-06",
+              "0.059073742"
+            ],
+            "passed": "True"
+          },
+          {
+            "test": "gguf_format",
+            "header_valid": true,
+            "metadata_valid": true,
+            "seed_valid": true,
+            "hash_valid": true,
+            "weights_valid": true,
+            "file_size": 41360,
+            "passed": true
+          },
+          {
+            "test": "reconstruction_accuracy",
+            "data_retained_pct": 50,
+            "mse": 12234951.172938257,
+            "correlation": 0.6354750114076775,
+            "passed": "False"
+          }
+        ]
+      }
+    }
+  ]
+}
