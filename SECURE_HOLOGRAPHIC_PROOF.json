@@ -1,0 +1,14 @@
+{
+  "invention": {
+    "name": "7D mH-Q: Manifold-Constrained Holographic Quantum Architecture",
+    "discoverer": "Sir Charles Spikes",
+    "discovery_date": "2025-12-24T00:00:00Z",
+    "location": "Cincinnati, Ohio, USA"
+  },
+  "holographic_proof": {
+    "public_hash": "7DMHQ-S2-9894b7739c67959f5a7055be8182534681601bf65b526a5c983b965f95db90a47746a380ebe4b185cd1aadadbebcf80b7a20f4a97a62ed5bb2bd330af71737fb",
+    "hmac_signature": "c902988d4740cd7028cc4b710a1ad9354d8a16c72c4f80f650355d9e9e4c75de33742e13e1a568bef37f9f10583c0ac5a66629bdf42c335b750fcecd20daf26c",
+    "salt": "g07uF4XYjw7uwP/DkRJxkGQdIrjRFQ5iXWoTnE9WxoI="
+  },
+  "generated_at": "2026-01-03T08:40:01.547336Z"
+}
