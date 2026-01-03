@@ -37,9 +37,14 @@ import jwt
 import numpy as np
 from pathlib import Path
 
-# Add parent directory to path for imports
-sys.path.insert(0, str(Path(__file__).parent.parent.parent))
-from applications.crystal_vault import CrystalVault, CrystalPasswordGenerator, CrystalEncryptionEngine
+# Add parent directory to path for imports (SaaS deployment compatible)
+sys.path.insert(0, str(Path(__file__).parent.parent))
+try:
+    from applications.crystal_vault import CrystalVault, CrystalPasswordGenerator, CrystalEncryptionEngine
+except ImportError:
+    # Fallback for local development
+    sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+    from applications.crystal_vault import CrystalVault, CrystalPasswordGenerator, CrystalEncryptionEngine
 
 # ================================================================================
 # CONFIGURATION
