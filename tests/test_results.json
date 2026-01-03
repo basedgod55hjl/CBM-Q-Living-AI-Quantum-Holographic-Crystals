@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-01-03T03:02:44.855460",
+  "timestamp": "2026-01-03T03:04:51.276643",
   "total_passed": 12,
   "total_tests": 12,
   "all_passed": true,
-  "elapsed_seconds": 6.565289735794067,
+  "elapsed_seconds": 6.511462688446045,
   "suites": [
     {
       "name": "Stability (S\u00b2) Tests",
@@ -12,7 +12,7 @@
         "passed": 4,
         "total": 4,
         "all_passed": true,
-        "elapsed_seconds": 0.08646512031555176,
+        "elapsed_seconds": 0.08700132369995117,
         "results": [
           {
             "test": "layer_depth_stability",
@@ -184,7 +184,7 @@
         "passed": 4,
         "total": 4,
         "all_passed": true,
-        "elapsed_seconds": 1.6391992568969727,
+        "elapsed_seconds": 1.7045629024505615,
         "results": [
           {
             "test": "phi_momentum_comparison",
@@ -269,7 +269,7 @@
         "passed": 4,
         "total": 4,
         "all_passed": true,
-        "elapsed_seconds": 4.672661781311035,
+        "elapsed_seconds": 4.537898063659668,
         "results": [
           {
             "test": "seed_unfolding",
@@ -280,7 +280,7 @@
               {
                 "output_size": 1000,
                 "compression_ratio": 1.953125,
-                "time": 0.004564046859741211,
+                "time": 0.004262208938598633,
                 "bounded": "True",
                 "mean": "0.02971621",
                 "std": "0.651432"
@@ -288,7 +288,7 @@
               {
                 "output_size": 10000,
                 "compression_ratio": 19.53125,
-                "time": 0.043186187744140625,
+                "time": 0.04079270362854004,
                 "bounded": "True",
                 "mean": "0.022746941",
                 "std": "0.6333815"
@@ -296,7 +296,7 @@
               {
                 "output_size": 100000,
                 "compression_ratio": 195.3125,
-                "time": 0.4401888847351074,
+                "time": 0.4073920249938965,
                 "bounded": "True",
                 "mean": "0.02286271",
                 "std": "0.6344535"
@@ -304,7 +304,7 @@
               {
                 "output_size": 1000000,
                 "compression_ratio": 1953.125,
-                "time": 4.162564516067505,
+                "time": 4.053445100784302,
                 "bounded": "True",
                 "mean": "0.022924477",
                 "std": "0.6343273"

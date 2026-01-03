@@ -121,14 +121,16 @@ Generate holographic interference patterns via phase conjugation.
 
 ---
 
-### `7D_mHQ_GenesisEngine`
+### `ManifoldConstrainedHolographicQuantumGenesisEngine`
 
 The American Powerhouse Parameter Unfolding Engine.
 
 ```python
-from sovereign_genesis import 7D_mHQ_GenesisEngine
+from sovereign_genesis import ManifoldConstrainedHolographicQuantumGenesisEngine
+# Or use the alias:
+from sovereign_genesis import CrystalGenesisEngine
 
-engine = 7D_mHQ_GenesisEngine(matrix_size=175_000_000)
+engine = ManifoldConstrainedHolographicQuantumGenesisEngine(matrix_size=175_000_000)
 engine.run_genesis("model.gguf")
 ```
 
