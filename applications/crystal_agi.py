@@ -43,7 +43,7 @@ import traceback
 # SACRED CONSTANTS - Foundation of Crystal AGI
 # ================================================================================
 
-PHI = 3.618033988749895              # Golden Ratio
+PHI = 1.618033988749895              # Golden Ratio
 PHI_INV = 0.618033988749895          # Golden Ratio Inverse
 PHI_SQUARED = 2.618033988749895      # PHI^2
 SQRT_PHI = 1.272019649514069         # sqrt(PHI)
@@ -173,21 +173,30 @@ class CrystalManifoldEngine:
     def generate_signature(self, text: str) -> np.ndarray:
         """Generate 7D manifold signature from text."""
         text_hash = hashlib.sha512(text.encode('utf-8')).digest()
-        float_data = np.frombuffer(text_hash[:28], dtype=np.float32)
-        float_data = np.nan_to_num(float_data, nan=0.0)
+        # Convert bytes to normalized floats in range [-1, 1]
+        byte_values = np.array([b for b in text_hash[:7]], dtype=np.float64)
+        float_data = (byte_values / 127.5) - 1.0  # Normalize to [-1, 1]
+        float_data = np.nan_to_num(float_data, nan=0.0, posinf=1.0, neginf=-1.0)
         
-        if len(float_data) < 7:
-            float_data = np.pad(float_data, (0, 7 - len(float_data)))
-        
-        return self.project_to_manifold(float_data[:7])
+        return self.project_to_manifold(float_data)
     
     def holographic_similarity(self, sig1: np.ndarray, sig2: np.ndarray) -> float:
         """Calculate holographic interference similarity."""
-        dot = np.dot(sig1, sig2)
-        norm1 = np.linalg.norm(sig1) + 1e-10
-        norm2 = np.linalg.norm(sig2) + 1e-10
-        similarity = dot / (norm1 * norm2)
-        return float((similarity + 1) / 2)
+        # Ensure arrays are float64 and normalized
+        s1 = np.asarray(sig1, dtype=np.float64)
+        s2 = np.asarray(sig2, dtype=np.float64)
+        s1 = np.clip(s1, -1e10, 1e10)
+        s2 = np.clip(s2, -1e10, 1e10)
+        
+        norm1 = np.linalg.norm(s1) + 1e-10
+        norm2 = np.linalg.norm(s2) + 1e-10
+        
+        # Normalize before dot product to prevent overflow
+        s1_norm = s1 / norm1
+        s2_norm = s2 / norm2
+        
+        similarity = np.dot(s1_norm, s2_norm)
+        return float(np.clip((similarity + 1) / 2, 0, 1))
     
     def evolve_signature(self, sig: np.ndarray, generation: int) -> np.ndarray:
         """Evolve signature through PHI-flux."""
