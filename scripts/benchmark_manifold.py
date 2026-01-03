@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-7DMH-QA Manifold Benchmark Suite
+7D mH-Q Manifold Benchmark Suite
 Performance testing for Crystal Architecture.
 """
 
@@ -17,7 +17,7 @@ sys.path.insert(0, CRYSTAL_DIR)
 from crystal_patterns import CrystalPatternGenerator, CrystalEvolutionEngine
 
 class ManifoldBenchmark:
-    """Comprehensive benchmarking for 7DMH-QA operations"""
+    """Comprehensive benchmarking for 7D mH-Q operations"""
     
     def __init__(self):
         self.gen = CrystalPatternGenerator(complexity=512)
@@ -112,7 +112,7 @@ class ManifoldBenchmark:
         """Run complete benchmark suite"""
         print("""
 ╔══════════════════════════════════════════════════════════════╗
-║       7DMH-QA MANIFOLD BENCHMARK SUITE                       ║
+║       7D mH-Q MANIFOLD BENCHMARK SUITE                       ║
 ║   Manifold-Constrained Holographic Quantum Architecture      ║
 ╚══════════════════════════════════════════════════════════════╝
         """)

@@ -15,7 +15,7 @@
 #define PI 3.141592653589793f
 
 /**
- * Manifold-Constrained Projection Kernel (mH-QA Core Algorithm)
+ * Manifold-Constrained Projection Kernel (7D mH-Q Core Algorithm)
  * Projects tensor onto 7D Poincare Ball for S² stability.
  *
  * @param input     Input tensor

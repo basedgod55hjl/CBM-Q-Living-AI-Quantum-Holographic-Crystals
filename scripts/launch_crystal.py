@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-7DMH-QA Crystal Launch Script
+7D mH-Q Crystal Launch Script
 One-click launcher for the entire Crystal Architecture system.
 """
 
@@ -18,7 +18,7 @@ sys.path.insert(0, CRYSTAL_DIR)
 def banner():
     print("""
 ╔══════════════════════════════════════════════════════════════════╗
-║  💎 7DMH-QA: Manifold-Constrained Holographic Quantum Architecture  ║
+║  💎 7D mH-Q: Manifold-Constrained Holographic Quantum Architecture  ║
 ║                     CRYSTAL LAUNCHER v2.0                          ║
 ╚══════════════════════════════════════════════════════════════════╝
     """)
@@ -152,7 +152,7 @@ def main():
     
     # Summary
     print("\n" + "="*60)
-    print("  7DMH-QA CRYSTAL SYSTEM STATUS")
+    print("  7D mH-Q CRYSTAL SYSTEM STATUS")
     print("="*60)
     print(f"  GPU Mode:      {gpu_mode.upper()}")
     print(f"  Neural Link:   {'ONLINE' if llm_ok else 'OFFLINE (Autonomous)'}")

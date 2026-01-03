@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to 7DMH-QA Crystal Architecture.
+All notable changes to 7D mH-Q Crystal Architecture.
 
 ## [2.0.0] - 2026-01-02
 
@@ -40,7 +40,7 @@ All notable changes to 7DMH-QA Crystal Architecture.
 ### Changed
 
 - README.md hashtags cleaned up (removed political, added technical)
-- Renamed architecture to "7DMH-QA" for clarity
+- Renamed architecture to **7D mH-Q** (formerly mH-QA) for clarity
 
 ---
 
@@ -53,7 +53,7 @@ All notable changes to 7DMH-QA Crystal Architecture.
 - `sovereign_genesis.py` - Genesis engine
 - `autonomous_reasoner.py` - Self-evolution capability
 - `genesis.py` - System launcher
-- mH-QA Technical Specification
+- 7D mH-Q Technical Specification
 - Neural Core (entropy mining)
 - Holographic Bridge (GPU interface)
 

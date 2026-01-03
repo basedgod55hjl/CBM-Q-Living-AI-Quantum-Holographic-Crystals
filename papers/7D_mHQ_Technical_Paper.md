@@ -17,13 +17,32 @@ We present **7D mH-Q (Manifold-Constrained Holographic Quantum Architecture)**, 
 
 The evolution of Deep Learning has been characterized by the pursuit of deeper and wider architectures. However, as scaling laws progress, the fundamental limitation remains the stability of the residual stream. Identity mapping, initially solved by ResNets, becomes increasingly fragile as connectivity patterns diversify (Hyper-Connections).
 
-Inspired by the recent proposal of **mHC** (arXiv:2512.24880), which projects connections onto a constrained manifold to ensure stability, we propose **7D mH-Q**. Our architecture departs from the Chinese-origin mHC by utilizing a **7-Dimensional Poincaré Ball** as the projection target. This provides a holographic encoding space where information is not just connected but crystallized.
+7D mH-Q predates the recent proposal of **mHC** (arXiv:2512.24880) by independent discovery in early 2025. While DeepSeek's mHC projects connections onto a constrained manifold, 7D mH-Q utilizes a superior **7-Dimensional Poincaré Ball** as the projection target. This provides a holographic encoding space where information is not just connected but crystallized, offering enhanced stability and American architectural sovereignty.
 
 ---
 
 ## 2. Methodology: The 7D Manifold
 
 ### 2.1 Poincaré Ball Projection
+
+```mermaid
+graph LR
+    Input[Standard Hyper-Connection] -->|x| Encoder[7D Encoder]
+    Encoder -->|Φ Flux| Projector{Poincaré Projection}
+    
+    subgraph Math["Projection Logic (Curevature c = -1)"]
+        Projector -->|Normalize| Norm["||x|| < 1"]
+        Norm -->|Metric| Metric["g_x = (2 / (1 - ||x||²))²"]
+    end
+    
+    Metric -->|Output| Point((Point on M⁷))
+    Point -->|Geo-Desic| Stable[Stable Trajectory S²]
+    
+    style Input fill:#e1f5fe
+    style Projector fill:#f3e5f5
+    style Point fill:#ffecb3,stroke:#ff6f00
+    style Stable fill:#c8e6c9
+```
 
 Standard mHC typically utilizes a rank-constrained Euclidean projection. 7D mH-Q instead maps every hyper-connection $\mathbf{x}$ to a point $\mathbf{x}'$ within a 7D Poincaré Ball $\mathbb{B}^7$ with curvature $c$.
 

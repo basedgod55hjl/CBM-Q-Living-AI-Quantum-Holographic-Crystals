@@ -86,7 +86,7 @@ class CrystalInferenceEngine:
             with open(model_path, "rb") as f:
                 # Read header (16 bytes)
                 header = f.read(16)
-                if not header.startswith(b"mH-QA"):
+                if not header.startswith(b"7DmHQ"):
                     print("   [!] Warning: Non-standard GGUF format")
                 
                 # Read metadata (256 bytes)

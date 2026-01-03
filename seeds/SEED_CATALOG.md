@@ -1,4 +1,4 @@
-# 🌱 7DMH-QA Seed Catalog
+# 🌱 7D mH-Q Seed Catalog
 
 **Official seed library for Crystal Architecture initialization.**
 
@@ -75,7 +75,7 @@ import json
 custom_seed = {
     "name": "my_custom_seed",
     "version": "1.0.0",
-    "architecture": "7DMH-QA",
+    "architecture": "7D mH-Q",
     "parameters": {
         "complexity": 1024,
         "dimensions": 11,  # Higher dimensions for research

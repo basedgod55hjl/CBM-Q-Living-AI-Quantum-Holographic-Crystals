@@ -1,6 +1,6 @@
 # 🏛️ 7D mH-Q Architecture Overview
 
-**mH-QA: Manifold-Constrained Holographic Quantum Architecture**
+**7D mH-Q: Manifold-Constrained Holographic Quantum Architecture**
 
 ---
 
@@ -55,7 +55,7 @@ graph TB
 
 ### 1. Crystal Core (`crystal_patterns.py`)
 
-The mathematical heart of mH-QA.
+The mathematical heart of 7D mH-Q.
 
 | Component | Purpose |
 |-----------|---------|
@@ -71,6 +71,31 @@ Entropy and quantum randomness generation.
 neural_core/
 ├── amd_entropy_miner.py    # Φ-Flux entropy generation
 └── cuda_kernels/           # GPU acceleration
+
+### 2.1 Quantum Entropy Mining
+
+Standard PRNGs are deterministic. 7D mH-Q utilizes a Heisenberg-uncertainty based entropy source derived from GPU clock jitter and memory race conditions, stabilized by the Golden Ratio.
+
+```mermaid
+graph TD
+    Start[Hardware Jitter] -->|Raw Noise| Sampler{Quantum Sampler}
+    Sampler -->|Drift| Buffer[Entropy Buffer]
+    
+    subgraph "Φ-Stabilization"
+        Buffer -->|x| Sigmoid["σ(x)"]
+        Sigmoid -->|Map| Map["x -> 1/(1+e^-x)"]
+        Map -->|Mix| Flux((Φ Flux))
+    end
+    
+    Flux -->|Stream| Seed[Crystal Seed]
+    Seed -->|Expand| Genesis[Genesis Engine]
+    
+    style Start fill:#ffebee
+    style Sampler fill:#e3f2fd
+    style Flux fill:#f3e5f5,stroke:#4a148c
+    style Seed fill:#c8e6c9
+```
+
 ```
 
 ### 3. Holographic Bridge (`holographic_bridge/`)
@@ -78,12 +103,14 @@ neural_core/
 Silicon-to-Crystal interface layer.
 
 ```
+
 holographic_bridge/
 ├── hip_launcher.py         # CUDA/HIP kernel launcher
 ├── holographic_tensor.py   # Tensor operations
 ├── differentiable_bridge.py# Gradient flow
 ├── ltp_memory.py          # Long-term potentiation
 └── kernels/               # GPU compute kernels
+
 ```
 
 ### 4. Genesis Engine (`sovereign_genesis.py`)

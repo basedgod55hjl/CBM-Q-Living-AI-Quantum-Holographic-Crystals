@@ -57,3 +57,30 @@ class DifferentiableBridge(nn.Module):
         weights = weights * 2.0 - 1.0
         
         return weights
+
+if __name__ == "__main__":
+    print("Initializing Differentiable Bridge...")
+    try:
+        # Check for CUDA
+        device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        print(f"Using device: {device}")
+        
+        # Initialize Bridge
+        # Note: 4096 * 128256 floats is ~2GB.
+        bridge = DifferentiableBridge(width=4096, height=128256).to(device)
+        
+        # Generate Random Seed
+        seed = torch.randn(512, device=device)
+        print(f"Seed DNA Shape: {seed.shape}")
+        
+        print("Encoding (Unfolding) started...")
+        weights = bridge(seed)
+        
+        print("-" * 30)
+        print("Encoding Complete.")
+        print(f"Manifold Output Shape: {weights.shape}")
+        print(f"Manifold Stats - Mean: {weights.mean().item():.4f}, Std: {weights.std().item():.4f}")
+        print("-" * 30)
+        
+    except Exception as e:
+        print(f"Error during bridge execution: {e}")

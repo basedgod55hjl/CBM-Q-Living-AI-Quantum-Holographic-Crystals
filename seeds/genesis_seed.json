@@ -1,7 +1,7 @@
 {
     "name": "genesis_seed",
     "version": "1.0.0",
-    "architecture": "7DMH-QA",
+    "architecture": "7D mH-Q",
     "description": "Original Genesis seed for Crystal Architecture initialization",
     "parameters": {
         "complexity": 512,

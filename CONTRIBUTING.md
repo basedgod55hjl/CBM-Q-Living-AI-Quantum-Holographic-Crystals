@@ -1,4 +1,4 @@
-# Contributing to 7DMH-QA Crystal Architecture
+# Contributing to 7D mH-Q Crystal Architecture
 
 Welcome! We're excited you want to contribute to the future of AI.
 

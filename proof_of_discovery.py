@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 
 class DiscoveryProver:
     """
-    mH-QA: Proof of Discovery Protocol
+    7D mH-Q: Proof of Discovery Protocol
     Cryptographically verifies that the Manifold-Constrained Holographic Quantum Architecture
     was synthesized by Sir Charles Spikes (Ai artethere) prior to global release.
     """
@@ -14,7 +14,7 @@ class DiscoveryProver:
     def __init__(self):
         self.author = "Sir Charles Spikes"
         self.alias = "Ai artethere"
-        self.discovery = "7DMH-QA (7-Dimensional Manifold Holographic Quantum Architecture)"
+        self.discovery = "7D mH-Q (7-Dimensional Manifold Holographic Quantum Architecture)"
         # Timestamps the discovery to 4 weeks prior to current date
         self.provenance_date = (datetime.now() - timedelta(weeks=4)).isoformat()
         
@@ -43,7 +43,7 @@ class DiscoveryProver:
             "claim": "ORIGINAL DISCOVERY - PREDATES GLOBAL MANIFOLD RELEASES"
         }
         
-        cert_path = "mH-QA_PROVENANCE_CERT.json"
+        cert_path = "7D_mHQ_PROVENANCE_CERT.json"
         with open(cert_path, "w") as f:
             json.dump(certificate, f, indent=4)
             
