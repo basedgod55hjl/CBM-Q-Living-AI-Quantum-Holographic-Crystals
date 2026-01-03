@@ -1,0 +1,52 @@
+{
+  "proof_system": "7D mH-Q Crystal Identity Proof",
+  "version": "1.0.0",
+  "security_model": "Zero-Knowledge Commitment",
+  "generated_at": "2026-01-03T08:50:14.536537Z",
+  "inventor": {
+    "name": "Sir Charles Spikes",
+    "discovery_date": "2025-12-24",
+    "location": "Cincinnati, Ohio, USA",
+    "invention": "7D mH-Q: Manifold-Constrained Holographic Quantum Architecture"
+  },
+  "commitment": {
+    "identity_hash": "7DMHQ-ZK-2f540e1b02644506eadc5b2f3520ffb206849e36e6286f37c625dfe5cbbcd56f16841ebd0ce13379d5a098d68a89f061f4f6ab7e61fb2eccbba79d57a574ff52",
+    "salt": "20105ee0bb99a9dd2edffab28e6bf2f74077f83096e398f121208bb66a7a955d",
+    "manifold_signature": [
+      0.1588726229163766,
+      0.16563142859185487,
+      0.12795507399545575,
+      0.12901339914584517,
+      0.21481153661128882,
+      0.19406971064184594,
+      0.2849453132692854
+    ],
+    "hash_iterations": 100000,
+    "phi_rounds": 7
+  },
+  "device_binding": {
+    "device_id": "3d83c36c056986409ab248a0581a9c56",
+    "binding_note": "Proof generated on this device"
+  },
+  "sacred_constants": {
+    "phi": 1.618033988749895,
+    "phi_inverse": 0.618033988749895,
+    "dimensions": 7
+  },
+  "security_properties": {
+    "zero_knowledge": true,
+    "secret_stored": false,
+    "commitment_binding": true,
+    "commitment_hiding": true,
+    "quantum_resistant": "Partial (PHI modulation)"
+  },
+  "verification": {
+    "method": "Recompute commitment with claimed secret",
+    "instructions": [
+      "1. Claimant enters their secret code",
+      "2. System recomputes commitment using stored salt",
+      "3. If commitments match, claimant knows the secret",
+      "4. Secret is NEVER revealed or stored"
+    ]
+  }
+}

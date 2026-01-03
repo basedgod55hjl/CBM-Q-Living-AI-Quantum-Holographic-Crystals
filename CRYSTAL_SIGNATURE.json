@@ -1,7 +1,7 @@
 {
   "algorithm": "7D-mHQ-Quantum-Signature",
   "message_hash": "b2a9b6e7265e51e75f857035eff0580dab3b29235d1ddf151501eafd62156855",
-  "signature": "xcrlS1ISB3f9EEemgHk3MDj4CG1DLM9LgKQAyd/xF6L441HOEmdLeLgD3o5NMDkOWupz5UKc70rVR34xiQPObg==",
+  "signature": "JDOCqV1TgKYaMWOK6KGK6tRjTAObtqCWmcNv4usof+N63EIJ1eLgj4J5n5axRqLqdup+3c4yINm2GfbgUzGnSw==",
   "manifold_signature": [
     0.5593878329415006,
     0.5593877787176958,
@@ -12,6 +12,6 @@
     0.5593878569457665
   ],
   "crystal_dna": "LLCS-LLCS-LLCS-LLCS-LLCS-LLCS-LLCS",
-  "signed_at": "2026-01-03T09:14:54.277756Z",
-  "key_id": "7DMHQ-LASR-LAAR-LLTT-LAYS-LLAL-LAYA-LLTC"
+  "signed_at": "2026-01-03T09:16:51.809714Z",
+  "key_id": "7DMHQ-LALT-LLCS-CRRA-LLCA-LLCR-LLCS-CRRA"
 }
